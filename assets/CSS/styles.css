@@ -1,19 +1,100 @@
-:root, :root[data-theme="dark"]{
-    --letter-color: #fff;
-    --icon-color-red: #ccc; 
-    --border-color-blue: #111;
+:root,
+:root[data-theme="dark"] {
+    --font-color: #d9d9d9;
+    --icon-color-red: #B80000;
+    --border-color-blue: #164743;
+    --border-color-gray: #343434;
+    --header-color: #1E1E1E;
+    --background-color: #262626;
+    --image-tomato-button: url("../images/logo-dark-tomato.svg");
+
+    --logo-color-red: #FF0000;
+    --logo-color-green: #00C344;
+    --star-color: #C27600;
 }
 
-:root[data-theme="light"]{
-    --letter-color: #fff;
-    --icon-color-red: #ccc; 
-    --border-color-blue: #111;
+:root[data-theme="light"] {
+    --font-color: #000000;
+    --icon-color-red: #FF0000;
+    --border-color-blue: #95DBD1;
+    --border-color-gray: #D9D9D9;
+    --header-color: #eaae92;
+    --background-color: #eae5cb;
+    --image-tomato-button: url("../images/logo-light-tomato.svg");
 }
 
 * {
-    margin: 0;
+    /* margin: 0px; */
     padding: 0;
-    /* box-sizing: border-box;
+    box-sizing: border-box;
     vertical-align: baseline;
-    list-style: none; */
+}
+
+body {
+    margin: 24px;
+    background-color: var(--background-color);
+}
+
+/* header {
+    padding: 0.5rem 1rem;
+} */
+
+.allButtons,
+#toggleTheme {
+    background: none;
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: none; */
+    appearance: none;
+    border: transparent;
+    border-radius: 25px;
+    background-position: top;
+    background-size: cover;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.allButtons {
+    width: 50px;
+    height: 50px;
+    &:active {
+        background-color: #C27600;
+    }
+}
+
+#toggleTheme {
+    width: 77px;
+    height: 77px;
+    &:checked {
+        background-image: url("../images/button-light-switch.svg");
+    }
+    &:not(:checked) {
+        background-image: url("../images/button-dark-switch.svg");
+    }
+}
+
+#perfil {
+    background-image: url("../images/button-person-circle.svg");
+}
+
+#setMusic {
+    background-image: url("../images/button-music.svg");
+}
+
+#setClock {
+    background-image: var(--image-tomato-button);
+}
+
+#controlClock {
+    &:checked {
+        background-image: url("../images/button-paw.svg");
+    }
+    &:not(:checked) {
+        background-image: url("../images/button-dark-play-circle.svg");
+        background-color: var(--icon-color-red);
+    }
+}
+
+#buttonGame {
+    background-image: url("../images/button-paw.svg");
 }
