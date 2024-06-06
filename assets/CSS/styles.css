@@ -1,0 +1,19 @@
+:root, :root[data-theme="dark"]{
+    --letter-color: #fff;
+    --icon-color-red: #ccc; 
+    --border-color-blue: #111;
+}
+
+:root[data-theme="light"]{
+    --letter-color: #fff;
+    --icon-color-red: #ccc; 
+    --border-color-blue: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none; */
+}
