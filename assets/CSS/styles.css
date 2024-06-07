@@ -7,10 +7,6 @@
     --header-color: #1E1E1E;
     --background-color: #262626;
     --image-tomato-button: url("../images/logo-dark-tomato.svg");
-
-    --logo-color-red: #FF0000;
-    --logo-color-green: #00C344;
-    --star-color: #C27600;
 }
 
 :root[data-theme="light"] {
