@@ -1,7 +1,9 @@
+/* --- Paleta ---*/
 :root,
 :root[data-theme="dark"] {
-    --font-color: #d9d9d9;
-    --icon-color-red: #B80000;
+    --text-color: #d9d9d9;
+    /* --icon-color-red: #B80000; */
+    --icon-color-red: #47ffff;
     --border-color-blue: #164743;
     --border-color-gray: #343434;
     --header-color: #1E1E1E;
@@ -10,7 +12,7 @@
 }
 
 :root[data-theme="light"] {
-    --font-color: #000000;
+    --text-color: #000000;
     --icon-color-red: #FF0000;
     --border-color-blue: #95DBD1;
     --border-color-gray: #D9D9D9;
@@ -18,25 +20,58 @@
     --background-color: #eae5cb;
     --image-tomato-button: url("../images/logo-light-tomato.svg");
 }
+/* --- Modo claro/escuro botoes --- */
+html[data-theme="light"] img {
+    filter: invert(1);
+}
 
+html[data-theme="dark"] #controlClock {
+    &:active {
+        background-color: #3d89ff;
+    }
+    filter: invert(1);
+}
+/* --- Elementos base --- */
 * {
-    /* margin: 0px; */
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     vertical-align: baseline;
 }
 
 body {
-    margin: 24px;
     background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* header {
-    padding: 0.5rem 1rem;
-} */
+header,
+div {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
 
+div {
+    padding: 0.5rem 1rem;
+}
+
+header {
+    padding: 0.0rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-color);
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+}
+/* --- Botoes --- */
 .allButtons,
-#toggleTheme {
+#toggleTheme,
+#controlClock {
     background: none;
     /* -webkit-appearance: none; */
     /* -moz-appearance: none; */
@@ -45,6 +80,7 @@ body {
     border-radius: 25px;
     background-position: top;
     background-size: cover;
+
     &:hover {
         cursor: pointer;
     }
@@ -53,6 +89,7 @@ body {
 .allButtons {
     width: 50px;
     height: 50px;
+
     &:active {
         background-color: #C27600;
     }
@@ -61,21 +98,27 @@ body {
 #toggleTheme {
     width: 77px;
     height: 77px;
+
     &:checked {
         background-image: url("../images/button-light-switch.svg");
     }
+
     &:not(:checked) {
         background-image: url("../images/button-dark-switch.svg");
     }
 }
 
-#perfil {
+/* #perfil {
     background-image: url("../images/button-person-circle.svg");
-}
+} */
 
-#setMusic {
+/* #setMusic {
     background-image: url("../images/button-music.svg");
-}
+} */
+
+/* #buttonGame {
+    background-image: url("../images/button-paw.svg");
+} */
 
 #setClock {
     background-image: var(--image-tomato-button);
@@ -85,12 +128,42 @@ body {
     &:checked {
         background-image: url("../images/button-paw.svg");
     }
+
     &:not(:checked) {
-        background-image: url("../images/button-dark-play-circle.svg");
-        background-color: var(--icon-color-red);
+        background-image: url("../images/button-light-play-circle.svg");
+
+        &:not(:active) {
+            background-color: var(--icon-color-red);
+        }
     }
 }
 
-#buttonGame {
-    background-image: url("../images/button-paw.svg");
+.menu_clock {
+    background-color: var(--header-color);
+    gap: 2rem;
+    /* coloque o menu no canto inferior */
+}
+
+@media(min-width: 760px) {
+    .menu_clock {
+        background-color: transparent;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+}
+/* --- Descrição final --- */
+footer {
+    text-align: center;
+}
+
+a {
+    color: var(--text-color);
+
+    &:hover {
+        color: var(--icon-color-red);
+        ;
+    }
 }
