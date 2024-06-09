@@ -1,11 +1,10 @@
-const toggleTheme = document.getElementById("toggleTheme");
-const rootHtml = document.documentElement
+var toggleTheme = document.getElementById("toggleTheme");
 
-function changeTheme(){
-    const currentTheme = rootHtml.getAtrribute("data-theme");
-
-    if(currentTheme == "dark") rootHtml.setAttribute("data-theme", "light")
-    else rootHtml.setAttribute("data-theme", "dark")
-}
-
-// toggleTheme.addEventListener("click", changeTheme);
+toggleTheme.addEventListener("click", () => {
+    let currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+        document.documentElement.setAttribute("data-theme",  "light");
+    }
+});

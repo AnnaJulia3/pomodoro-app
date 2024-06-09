@@ -2,35 +2,44 @@
 :root,
 :root[data-theme="dark"] {
     --text-color: #d9d9d9;
-    /* --icon-color-red: #B80000; */
-    --icon-color-red: #47ffff;
+    --icon-color-red: #B80000;
+    /* --icon-color-red: #47ffff; */
     --border-color-blue: #164743;
     --border-color-gray: #343434;
     --header-color: #1E1E1E;
     --background-color: #262626;
     --image-tomato-button: url("../images/logo-dark-tomato.svg");
+    --active-button-control-clock: #C27600;
 }
 
 :root[data-theme="light"] {
     --text-color: #000000;
-    --icon-color-red: #FF0000;
+    /* --icon-color-red: #FF0000; */
+    --icon-color-red: #00ffff;
     --border-color-blue: #95DBD1;
     --border-color-gray: #D9D9D9;
     --header-color: #eaae92;
     --background-color: #eae5cb;
     --image-tomato-button: url("../images/logo-light-tomato.svg");
-}
-/* --- Modo claro/escuro botoes --- */
-html[data-theme="light"] img {
-    filter: invert(1);
+    --active-button-control-clock: #3d89ff;
 }
 
-html[data-theme="dark"] #controlClock {
+/* --- Modo claro/escuro botoes --- */
+html[data-theme="light"] {
+
+    img,
+    #controlClock {
+        filter: invert(1);
+    }
+}
+
+/* html[data-theme="dark"] #controlClock {
     &:active {
         background-color: #3d89ff;
     }
     filter: invert(1);
-}
+} */
+
 /* --- Elementos base --- */
 * {
     margin: 0px;
@@ -68,6 +77,7 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
 }
+
 /* --- Botoes --- */
 .allButtons,
 #toggleTheme,
@@ -126,15 +136,19 @@ h1 {
 
 #controlClock {
     &:checked {
-        background-image: url("../images/button-paw.svg");
+        background-image: url("../images/button-x-circle.svg");
     }
 
     &:not(:checked) {
-        background-image: url("../images/button-light-play-circle.svg");
+        background-image: url("../images/button-dark-play-circle.svg");
 
         &:not(:active) {
             background-color: var(--icon-color-red);
         }
+    }
+
+    &:active {
+        background-color: var(--active-button-control-clock);
     }
 }
 
@@ -154,6 +168,7 @@ h1 {
         font-size: 100px;
     }
 }
+
 /* --- Descrição final --- */
 footer {
     text-align: center;
