@@ -151,26 +151,25 @@ h1 {
         background-color: var(--active-button-control-clock);
     }
 }
+/* --- Divisórias --- */
+.clock_space{
+    margin-top: 150px;
+    border-radius: 100px;
+    border: 15px solid var(--border-color-gray);
+    padding: 40px 0px 40px 0px;
+}
 
 .menu_clock {
+    padding-top: 20px;
+    position: absolute;
+    bottom: 0%;
     background-color: var(--header-color);
     gap: 2rem;
-    /* coloque o menu no canto inferior */
 }
-
-@media(min-width: 760px) {
-    .menu_clock {
-        background-color: transparent;
-        gap: 1rem;
-    }
-
-    h1 {
-        font-size: 100px;
-    }
-}
-
 /* --- Descrição final --- */
 footer {
+    position: relative;
+    margin-top: 240px;
     text-align: center;
 }
 
@@ -180,5 +179,17 @@ a {
     &:hover {
         color: var(--icon-color-red);
         ;
+    }
+}
+/* --- Responsividade específica --- */
+@media(min-width: 760px) {
+    .menu_clock {
+        position: relative;
+        background-color: transparent;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 100px;
     }
 }
