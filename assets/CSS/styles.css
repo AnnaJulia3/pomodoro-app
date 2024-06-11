@@ -23,13 +23,16 @@
     --image-tomato-button: url("../images/logo-light-tomato.svg");
     --active-button-control-play-clock: #3d89ff;
 }
+
 /* --- Modo claro/escuro botoes --- */
 html[data-theme="light"] {
+
     img,
     #controlPlayClock {
         filter: invert(1);
     }
 }
+
 /* --- Elementos base --- */
 * {
     margin: 0px;
@@ -57,6 +60,7 @@ div {
     justify-content: center;
     padding: 0.5rem 1rem;
 }
+
 /* --- Divisórias --- */
 header {
     padding: 0.0rem 1rem;
@@ -64,11 +68,11 @@ header {
     background-color: var(--header-color);
 }
 
-.conteiner{
+.conteiner {
     width: 100vw;
 }
 
-.clock_space{
+.clock_space {
     background-color: var(--header-color);
     margin-top: 150px;
     width: 50dvb;
@@ -85,20 +89,23 @@ header {
     background-color: var(--header-color);
     gap: 2rem;
 }
+
 /* --- Texto --- */
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
 }
+
 /* --- Botoes --- */
 .allButtons,
-#toggleTheme{
+#toggleTheme {
     background: none;
     appearance: none;
     border: transparent;
     border-radius: 25px;
     background-position: top;
     background-size: cover;
+
     &:hover {
         cursor: pointer;
     }
@@ -107,9 +114,11 @@ h1 {
 .allButtons {
     width: 50px;
     height: 50px;
-    > img{
+
+    >img {
         width: 50px;
     }
+
     &:active {
         background-color: #C27600;
     }
@@ -118,9 +127,11 @@ h1 {
 #toggleTheme {
     width: 77px;
     height: 77px;
+
     &:checked {
         background-image: url("../images/button-light-switch.svg");
     }
+
     &:not(:checked) {
         background-image: url("../images/button-dark-switch.svg");
     }
@@ -133,6 +144,11 @@ h1 {
 #controlPlayClock {
     &:checked {
         background-image: url("../images/button-x-circle.svg");
+
+        ~#setClock,
+        ~#buttonGame {
+            display: none;
+        }
     }
 
     &:not(:checked) {
@@ -141,14 +157,17 @@ h1 {
         &:not(:active) {
             background-color: var(--icon-color-red);
         }
-        ~ #buttonGear{
+
+        ~#buttonGear {
             display: none;
         }
     }
+
     &:active {
         background-color: var(--active-button-control-play-clock);
     }
 }
+
 /* --- Descrição final --- */
 footer {
     position: relative;
@@ -164,16 +183,19 @@ a {
         ;
     }
 }
+
 /* --- Responsividade específica --- */
 @media(min-width: 760px) {
     header {
-            padding: 0.0rem 3rem;
+        padding: 0.0rem 3rem;
     }
+
     .menu_clock {
         position: relative;
         background-color: transparent;
         gap: 1rem;
     }
+
     h1 {
         font-size: 100px;
     }
