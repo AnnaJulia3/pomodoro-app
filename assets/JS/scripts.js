@@ -51,11 +51,10 @@ controlPlayClock.addEventListener("change", () => {
         minutes = Math.trunc(timeNow).toString().padStart(2, '0');
         seconds = '00';
         hour = '00';
-        progressClock = setInterval(playClock, 1000); // Atualiza a cada segundo
+        progressClock = setInterval(playClock, 1000); 
         playClock();
     }
     else {
         clearInterval(progressClock);
     }
-    // prox a adicionar: funcao minimizar botoes de configuracao em um
 });

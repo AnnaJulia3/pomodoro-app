@@ -25,7 +25,6 @@
 }
 /* --- Modo claro/escuro botoes --- */
 html[data-theme="light"] {
-
     img,
     #controlPlayClock {
         filter: invert(1);
@@ -49,7 +48,7 @@ header,
 div {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
+    width: 100vw;
     align-items: center;
     text-align: center;
 }
@@ -67,27 +66,16 @@ header {
 
 .conteiner{
     width: 100vw;
-    /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
 }
 
 .clock_space{
     background-color: var(--header-color);
-    /* position: absolute; */
     margin-top: 150px;
-    /* margin: 200px;/ */
     width: 50dvb;
     border-radius: 150px;
     border: 15px solid var(--border-color-gray);
     /* padding: 40px 0px 40px 0px; */
     padding: 40px;
-
-    /* display: flex; */
-    /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: flex-start; */
 }
 
 .menu_clock {
@@ -119,6 +107,9 @@ h1 {
 .allButtons {
     width: 50px;
     height: 50px;
+    > img{
+        width: 50px;
+    }
     &:active {
         background-color: #C27600;
     }
@@ -150,8 +141,10 @@ h1 {
         &:not(:active) {
             background-color: var(--icon-color-red);
         }
+        ~ #buttonGear{
+            display: none;
+        }
     }
-
     &:active {
         background-color: var(--active-button-control-play-clock);
     }
@@ -159,7 +152,7 @@ h1 {
 /* --- Descrição final --- */
 footer {
     position: relative;
-    margin-top: 240px;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -173,12 +166,14 @@ a {
 }
 /* --- Responsividade específica --- */
 @media(min-width: 760px) {
+    header {
+            padding: 0.0rem 3rem;
+    }
     .menu_clock {
         position: relative;
         background-color: transparent;
         gap: 1rem;
     }
-
     h1 {
         font-size: 100px;
     }
