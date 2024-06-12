@@ -1,6 +1,7 @@
 var toggleTheme = document.getElementById("toggleTheme");
 var controlPlayClock = document.getElementById("controlPlayClock");
 var timeText = document.getElementById("timeText");
+var buttonMusic = document.getElementById("buttonMusic");
 
 const pomodoroTimerInSeconds = 1500;
 const shortBreakTimerInSeconds = 100;
@@ -53,8 +54,12 @@ controlPlayClock.addEventListener("change", () => {
         hour = '00';
         progressClock = setInterval(playClock, 1000); 
         playClock();
+
+        buttonMusic.style.display = "none";
     }
     else {
         clearInterval(progressClock);
+
+        buttonMusic.style.display = "flex";
     }
 });
