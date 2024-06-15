@@ -4,6 +4,7 @@ var timerText = document.getElementById("timerText");
 var buttonMusic = document.getElementById("buttonMusic");
 var buttonGame = document.getElementById("buttonGameDown");
 var buttonTopGame = document.getElementById("buttonGameTop");
+var clockSpace = document.getElementById("clock_space");
 
 const TYPE_POMODORO = 0;
 const TYPE_BREAK = 1;
@@ -54,6 +55,7 @@ controlPlayTimer.addEventListener("change", () => {
         timerNow = 0;
         buttonMusic.style.display = "none";
         buttonTopGame.style.display = "none";
+        clockSpace.setAttribute("theme", "pomodoro");
         if (nowType == TYPE_STOPWATCH) endTime = maxTime;
         else{
             if (nowType == TYPE_BREAK){
@@ -63,6 +65,7 @@ controlPlayTimer.addEventListener("change", () => {
                 // buttonMusic.style.display = "flex";
                 // buttonGame.style.display = "flex";
                 buttonTopGame.style.display = "flex";
+                clockSpace.setAttribute("theme", "break");
             } 
             else{
                 endTime = pomodoroTime;//*60;

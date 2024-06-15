@@ -72,7 +72,8 @@ header {
 }
 
 .conteiner {
-    height: 500px;
+    margin-top: 12vh;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,14 +81,23 @@ header {
 }
 
 .clock_space {
+    position: fixed;
     background-color: var(--header-color);
     /* margin-top: 110px; */
-    margin-top: 10vh;
+    top: 28%;
     /* width: 320px; */
     width: auto;
     border-radius: 150px;
-    border: 15px solid var(--border-color-gray);
+    border: 15px solid;
     /* height: 220px; */
+}
+
+.clock_space[theme="pomodoro"]{
+    border-color: var(--border-color-gray);
+}
+
+.clock_space[theme="break"]{
+    border-color: var(--border-color-blue);
 }
 
 .menu_clock {
@@ -148,10 +158,14 @@ h1 {
 }
 
 .topGame{
+    z-index: 2;
     position: relative;
-    height: 35px;
-    bottom: 170px;
+    width: auto;
+    top: -65px;
     display: none;
+    >img{
+        margin: 10px;
+    }
 }
 
 #setClock {
@@ -187,7 +201,12 @@ h1 {
 
 /* --- Descrição final --- */
 footer {
+    width: 100%;
+    position: fixed;
+    bottom: 15%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
@@ -206,14 +225,15 @@ a {
     }
 
     .menu_clock {
-        position: relative;
+        position: absolute;
+        top: 260px;
         background-color: transparent;
         gap: 1rem;
     }
 
     .topGame{
-        bottom: 210px;
-    }
+        top: -5%;
+    } 
 
     h1 {
         font-size: 100px;
