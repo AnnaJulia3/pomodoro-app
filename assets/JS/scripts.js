@@ -1,22 +1,26 @@
 var toggleTheme = document.getElementById("toggleTheme");
-var controlPlayClock = document.getElementById("controlPlayClock");
-var timeText = document.getElementById("timeText");
+var controlPlayTimer = document.getElementById("controlPlayTimer");
+var timerText = document.getElementById("timerText");
 var buttonMusic = document.getElementById("buttonMusic");
+var buttonGame = document.getElementById("buttonGameDown");
+var buttonTopGame = document.getElementById("buttonGameTop");
 
-const pomodoroTimerInSeconds = 1500;
-const shortBreakTimerInSeconds = 100;
+const TYPE_POMODORO = 0;
+const TYPE_BREAK = 1;
+const TYPE_STOPWATCH = 2; //prox passo funcao indicar tipo stepTimer = 1
+const TYPE_TIMING_DEVICE = 3; //prox passo funcao indicar tipo stepTimer = -1
+var maxTime = 720;
+var pomodoroTime = 10;
+var breakTime = 5;
+var stepTimer = -1;
+var nowType = 0; 
+var timerNow;
+var endTime;
+var seconds;
+var minutes;
+let timerProgress;
 
-var timeNow = 0;
-var timeEnd = 25;
-var initClock = 0;
-var modeClock = 0;
-var stepClock = 1;
-let progressClock;
-var seconds = 0;
-var minutes = 0;
-var hour = 0;
-
-toggleTheme.addEventListener("click", () => {
+toggleTheme.addEventListener("change", () => {
     let currentTheme = document.documentElement.getAttribute("data-theme");
     if (currentTheme === "light") {
         document.documentElement.setAttribute("data-theme", "dark");
@@ -25,41 +29,57 @@ toggleTheme.addEventListener("click", () => {
     }
 });
 
-var aux;
-
-function playClockHour() {
-    timeText.textContent = `${hour}:${minutes}:${seconds}`;
-    timeNow = timeNow + stepClock;
-    hour = Math.trunc(timeNow / 360).toString().padStart(2, '0');
-    minutes = Math.trunc(timeNow / 60).toString().padStart(2, '0');
-    seconds = Math.trunc(timeNow % 60).toString().padStart(2, '0');
+function stopTimer(){
+    clearInterval(timerProgress);
+    buttonMusic.style.display = "flex";
 }
 
-function playClock() {
-    timeText.textContent = `${minutes}:${seconds}`;
-    timeNow = timeNow + stepClock;
-    minutes = Math.trunc(timeNow / 60).toString().padStart(2, '0');
-    seconds = Math.trunc(timeNow % 60).toString().padStart(2, '0');
+function playTimer() {
+    timerNowInMinutes = timerNow / 60 ;
+    minutes = Math.trunc(timerNowInMinutes).toString().padStart(2, '0');
+    seconds = Math.trunc(timerNow % 60).toString().padStart(2, '0');
+    timerText.textContent = `${minutes}:${seconds}`;
 
-    if(timeNow === timeEnd){
-        clearInterval(progressClock);
+    if(timerNowInMinutes == endTime){
+        controlPlayTimer.checked = false;
+        stopTimer();
     }
+    timerNow += stepTimer;
 }
 
-controlPlayClock.addEventListener("change", () => {
-    if (controlPlayClock.checked) {
-        timeNow = initClock;
-        minutes = Math.trunc(timeNow).toString().padStart(2, '0');
-        seconds = '00';
-        hour = '00';
-        progressClock = setInterval(playClock, 1000); 
-        playClock();
+controlPlayTimer.addEventListener("change", () => {
+    
 
+    if (controlPlayTimer.checked) {
+        timerNow = 0;
         buttonMusic.style.display = "none";
+        buttonTopGame.style.display = "none";
+        if (nowType == TYPE_STOPWATCH) endTime = maxTime;
+        else{
+            if (nowType == TYPE_BREAK){
+                endTime = breakTime;//*60;
+                nowType = TYPE_POMODORO;
+
+                // buttonMusic.style.display = "flex";
+                // buttonGame.style.display = "flex";
+                buttonTopGame.style.display = "flex";
+            } 
+            else{
+                endTime = pomodoroTime;//*60;
+                if(nowType == TYPE_POMODORO) nowType = TYPE_BREAK;
+            }
+            if(stepTimer==-1){
+                timerNow = endTime; 
+                endTime = 0;  
+            }
+        }
+        
+        timerProgress = setInterval(playTimer, 1000); 
+        playTimer(endTime);
+
+        
     }
     else {
-        clearInterval(progressClock);
-
-        buttonMusic.style.display = "flex";
+        stopTimer();
     }
 });
