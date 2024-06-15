@@ -1,8 +1,6 @@
-var toggleTheme = document.getElementById("toggleTheme");
 var controlPlayTimer = document.getElementById("controlPlayTimer");
 var timerText = document.getElementById("timerText");
 var buttonMusic = document.getElementById("buttonMusic");
-var buttonGame = document.getElementById("buttonGameDown");
 var buttonTopGame = document.getElementById("buttonGameTop");
 var clockSpace = document.getElementById("clock_space");
 
@@ -20,15 +18,6 @@ var endTime;
 var seconds;
 var minutes;
 let timerProgress;
-
-toggleTheme.addEventListener("change", () => {
-    let currentTheme = document.documentElement.getAttribute("data-theme");
-    if (currentTheme === "light") {
-        document.documentElement.setAttribute("data-theme", "dark");
-    } else {
-        document.documentElement.setAttribute("data-theme", "light");
-    }
-});
 
 function stopTimer(){
     clearInterval(timerProgress);
@@ -50,7 +39,6 @@ function playTimer() {
 
 controlPlayTimer.addEventListener("change", () => {
     
-
     if (controlPlayTimer.checked) {
         timerNow = 0;
         buttonMusic.style.display = "none";
@@ -61,9 +49,6 @@ controlPlayTimer.addEventListener("change", () => {
             if (nowType == TYPE_BREAK){
                 endTime = breakTime;//*60;
                 nowType = TYPE_POMODORO;
-
-                // buttonMusic.style.display = "flex";
-                // buttonGame.style.display = "flex";
                 buttonTopGame.style.display = "flex";
                 clockSpace.setAttribute("theme", "break");
             } 
@@ -79,10 +64,6 @@ controlPlayTimer.addEventListener("change", () => {
         
         timerProgress = setInterval(playTimer, 1000); 
         playTimer(endTime);
-
-        
     }
-    else {
-        stopTimer();
-    }
+    else stopTimer();
 });
