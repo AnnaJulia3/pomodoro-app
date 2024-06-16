@@ -9,7 +9,7 @@ A pasta "design" serve apenas de auxílio para a documentação e demais informa
 ## Propostas
 
 - [ ] Em relação ao design: buscar botões auto explicativos
-- [ ] Modo claro e escuro
+- [X] Modo claro e escuro
 - [ ] Responsivo (desktop e mobile)
 
 ---
@@ -18,8 +18,8 @@ A pasta "design" serve apenas de auxílio para a documentação e demais informa
 
 Mobile:
 
-![app-mobile](./Design/mobile.jpg)
+![app-mobile](./design/mobile.jpg)
 
 Desktop:
 
-![app-mobile](./Design/desktop.jpg)
+![app-mobile](./design/desktop.jpg)
