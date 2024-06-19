@@ -83,20 +83,21 @@ header {
 .clock_space {
     position: fixed;
     background-color: var(--header-color);
+    /* background-color: var(--background-color); // pode vir a ser necessário*/
     /* margin-top: 110px; */
     top: 28%;
     /* width: 320px; */
     width: auto;
     border-radius: 150px;
-    border: 15px solid;
+    border: 10px solid;
     /* height: 220px; */
 }
 
-.clock_space[theme="pomodoro"]{
+.clock_space[theme="pomodoro"] {
     border-color: var(--border-color-gray);
 }
 
-.clock_space[theme="break"]{
+.clock_space[theme="break"] {
     border-color: var(--border-color-blue);
 }
 
@@ -113,11 +114,12 @@ header {
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 60px;
-    padding: 50px 60px ;
+    padding: 50px 60px;
 }
 
 /* --- Botoes --- */
-.allButtons, .topGame,
+.allButtons,
+.topGame,
 #toggleTheme {
     background: none;
     appearance: none;
@@ -131,12 +133,13 @@ h1 {
     }
 }
 
-.allButtons, .topGame {
-    width: 50px;
-    height: 50px;
+.allButtons,
+.topGame {
+    width: 40px;
+    height: 40px;
 
     >img {
-        width: 50px;
+        width: 40px;
     }
 
     &:active {
@@ -145,8 +148,8 @@ h1 {
 }
 
 #toggleTheme {
-    width: 77px;
-    height: 77px;
+    width: 60px;
+    height: 60px;
 
     &:checked {
         background-image: url("../images/button-light-switch.svg");
@@ -157,13 +160,14 @@ h1 {
     }
 }
 
-.topGame{
+.topGame {
     z-index: 2;
     position: relative;
     width: auto;
-    top: -65px;
+    top: -50px;
     display: none;
-    >img{
+
+    >img {
         margin: 10px;
     }
 }
@@ -214,7 +218,6 @@ a {
 
     &:hover {
         color: var(--icon-color-red);
-        ;
     }
 }
 
@@ -231,9 +234,9 @@ a {
         gap: 1rem;
     }
 
-    .topGame{
-        top: -5%;
-    } 
+    .topGame {
+        top: -40px;
+    }
 
     h1 {
         font-size: 100px;
