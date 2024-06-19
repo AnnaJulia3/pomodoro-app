@@ -12,72 +12,72 @@ var maxTime = 720;
 var pomodoroTime = 25;
 var breakTime = 5;
 var stepTimer = -1;
-var nowType = 0; 
+var nowType = 0;
 var timerNow;
 var endTime;
 var seconds;
 var minutes;
 let timerProgress;
 
-function stopTimer(){
+function stopTimer() {
     clearInterval(timerProgress);
     buttonMusic.style.display = "flex";
     if (!audioBackground.paused) audioBackground.pause();
 }
 
 function playTimer() {
-    timerNowInMinutes = timerNow / 60 ;
+    timerNowInMinutes = timerNow / 60;
     minutes = Math.trunc(timerNowInMinutes).toString().padStart(2, '0');
     seconds = Math.trunc(timerNow % 60).toString().padStart(2, '0');
     timerText.textContent = `${minutes}:${seconds}`;
-    if(nowType != TYPE_POMODORO) audioBackground.play();
-    if(timerNowInMinutes == endTime){
+    if (nowType != TYPE_POMODORO) audioBackground.play();
+    if (timerNowInMinutes == endTime) {
         controlPlayTimer.checked = false;
         stopTimer();
-        if(nowType != TYPE_POMODORO) audioSucessPomodoro.play(); 
+        if (nowType != TYPE_POMODORO) audioSucessPomodoro.play();
         else {
             audioEndBreak.play();
         }
     }
-    timerNow += stepTimer; 
+    timerNow += stepTimer;
 }
 
 controlPlayTimer.addEventListener("change", () => {
-    
     if (controlPlayTimer.checked) {
+        audioStartPomodoro.play();
         timerNow = 0;
         buttonMusic.style.display = "none";
         buttonTopGame.style.display = "none";
         clockSpace.setAttribute("theme", "pomodoro");
-        audioStartPomodoro.play();
+
         if (!audioEndBreak.paused) {
             audioEndBreak.pause();
             audioEndBreak.currentTime = 0;
         }
-        if (nowType == TYPE_STOPWATCH){
+        if (nowType == TYPE_STOPWATCH) {
             endTime = maxTime;
-        } 
-        else{
-            if (nowType == TYPE_BREAK){
-                endTime = breakTime*60;
+        }
+        else {
+            if (nowType == TYPE_BREAK) {
+                endTime = breakTime;// * 60;
                 nowType = TYPE_POMODORO;
                 buttonTopGame.style.display = "flex";
                 clockSpace.setAttribute("theme", "break");
-            } 
-            else{
-                endTime = pomodoroTime*60;
-                if(nowType == TYPE_POMODORO) nowType = TYPE_BREAK;
             }
-            if(stepTimer==-1){
-                timerNow = endTime; 
-                endTime = 0;  
+            else {
+                endTime = pomodoroTime;// * 60;
+                if (nowType == TYPE_POMODORO) nowType = TYPE_BREAK;
+            }
+            if (stepTimer == -1) {
+                timerNow = endTime;
+                endTime = 0;
             }
         }
-        
-        timerProgress = setInterval(playTimer, 1000); 
+
+        timerProgress = setInterval(playTimer, 1000);
         playTimer(endTime);
     }
-    else {   
+    else {
         stopTimer();
         audioLosePomodoro.play();
     }
