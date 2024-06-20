@@ -42,7 +42,7 @@ function playTimer() {
     timerNow += stepTimer;
 }
 
-controlPlayTimer.addEventListener("change", () => {
+controlPlayTimer.addEventListener("click", () => {
     if (controlPlayTimer.checked) {
         audioStartPomodoro.play();
         timerNow = 0;
@@ -59,13 +59,13 @@ controlPlayTimer.addEventListener("change", () => {
         }
         else {
             if (nowType == TYPE_BREAK) {
-                endTime = breakTime;// * 60;
+                endTime = breakTime * 60;
                 nowType = TYPE_POMODORO;
                 buttonTopGame.style.display = "flex";
                 clockSpace.setAttribute("theme", "break");
             }
             else {
-                endTime = pomodoroTime;// * 60;
+                endTime = pomodoroTime * 60;
                 if (nowType == TYPE_POMODORO) nowType = TYPE_BREAK;
             }
             if (stepTimer == -1) {
@@ -75,7 +75,7 @@ controlPlayTimer.addEventListener("change", () => {
         }
 
         timerProgress = setInterval(playTimer, 1000);
-        playTimer(endTime);
+        playTimer();
     }
     else {
         stopTimer();

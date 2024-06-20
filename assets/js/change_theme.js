@@ -1,6 +1,5 @@
 var toggleTheme = document.getElementById("toggleTheme");
 
-
 toggleTheme.addEventListener("change", () => {
     let currentTheme = document.documentElement.getAttribute("data-theme");
     if (currentTheme === "light") {
