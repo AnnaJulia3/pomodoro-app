@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer Pomodoro</title>
     <meta name="description" content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil">
+    <meta name="google-site-verification" content="FSKZBqVg09nF3bEBD3WmDC8HBgJJizoMAfRE3q1Lt7s" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -14,7 +15,7 @@
 <body>
     <header class="header_nav">
         <input type="checkbox" id="toggleTheme">
-        <button type="button" class="allButtons">
+        <button type="button" class="allButtons" id="buttonPerfil" onclick="openMenu('perfilMenu')">
             <img src="./assets/images/button-person-circle.svg" alt="perfil" id="perfil">
         </button>
     </header>
@@ -52,8 +53,16 @@
             @ 2024. Todos os Direitos Reservados. Anna Júlia Miranda. Em desenvolvimento por <a href="https://github.com/AnnaJulia3">AJ</a>
         </p>
     </footer>
+
+    <menu class="dropdown_menu" id="perfilMenu">
+        <button title="Close" id="close" class="button-close" onclick="closeMenu('perfilMenu')">x</button>
+        <p>Em breve mais funções</p>
+        <button title="Em breve mais funções"  class="button-menu">Login</button>
+    </menu>
+
     <script src="./assets/js/set_music.js"></script>
     <script src="./assets/js/timer_execution.js"></script>
-    <script src="./assets/js/change_theme.js"></script>
+    <script src="./assets/js/change_theme_and_displays.js"></script>
 </body>
+
 </html>

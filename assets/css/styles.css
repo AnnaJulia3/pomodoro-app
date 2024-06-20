@@ -109,6 +109,59 @@ header {
     gap: 2rem;
 }
 
+.dropdown_menu {
+    z-index: 4;
+    position: absolute;
+    display: none;
+
+    word-wrap: break-word;
+
+    background: var(--header-color);
+    border: 3px solid;
+    border-color: var(--border-color-gray);
+    border-radius: 20px;
+
+    flex-direction: column;
+    padding: 0px 2vw 2vw;
+
+    align-items: end;
+
+    .button-menu, .button-close {
+        font-weight: 400;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        color: var(--text-color);
+        cursor: pointer;
+        margin-top: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        appearance: none;
+        background-color: transparent;
+        position: relative;
+        border-radius: 1rem;
+
+        &:active {
+            background-color: #C27600;
+        }
+    }
+    .button-menu{
+        text-align: left;
+        width: 100%;
+        border: solid var(--background-color);
+    }
+
+    .button-close {
+        border: none;
+        padding: 0;
+        font-size: 20px;
+    }
+}
+
+#perfilMenu {
+    top: 8vh;
+    right: 5vw;
+}
+
 /* --- Texto --- */
 
 h1 {
