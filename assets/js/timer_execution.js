@@ -44,6 +44,7 @@ function playTimer() {
 
 controlPlayTimer.addEventListener("click", () => {
     if (controlPlayTimer.checked) {
+        audioStartPomodoro.currentTime = 0;
         audioStartPomodoro.play();
         timerNow = 0;
         buttonMusic.style.display = "none";
