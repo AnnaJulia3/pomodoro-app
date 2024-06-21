@@ -15,7 +15,7 @@
 <body>
     <header class="header_nav">
         <input type="checkbox" id="toggleTheme">
-        <button type="button" class="allButtons" id="buttonPerfil" onclick="openMenu('perfilMenu')">
+        <button type="button" class="allButtons" id="buttonPerfil" onclick="openMenu(0)">
             <img src="./assets/images/button-person-circle.svg" alt="perfil" id="perfil">
         </button>
     </header>
@@ -30,20 +30,20 @@
     </div>
 
     <div class="menu_clock">
-        <button type="button" class="allButtons" id="buttonMusic" onclick="openMenu('musicMenu')">
+        <button type="button" class="allButtons" id="buttonMusic" onclick="openMenu(1)">
             <img src="./assets/images/button-music.svg" alt="buttonMusic">
         </button>
 
         <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" >
 
-        <button type="button" class="allButtons" id="setClock" title="Temporizador" onclick="openMenu('setClockMenu')">
+        <button type="button" class="allButtons" id="setClock" title="Temporizador" onclick="openMenu(2)">
         </button>
 
         <button type="button" class="allButtons" id="buttonGear">
             <img src="./assets/images/button-gear.svg" alt="buttonGame">
         </button>
 
-        <button type="button" class="allButtons" id="buttonGameDown" onclick="openMenu('gameMenu')">
+        <button type="button" class="allButtons" id="buttonGameDown" onclick="openMenu(3)">
             <img src="./assets/images/button-paw.svg" alt="buttonGame">
         </button>
     </div>
