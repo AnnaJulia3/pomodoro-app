@@ -130,6 +130,8 @@ header {
     padding: 0px 2vw 2vw;
 
     align-items: end;
+    bottom: 38dvh;
+    right: 35dvw;
     
 
     .button-menu, .button-close {
@@ -167,6 +169,7 @@ header {
 #perfilMenu {
     top: 8vh;
     right: 5vw;
+    bottom: auto;
 }
 
 /* --- Texto --- */

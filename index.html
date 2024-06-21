@@ -30,20 +30,20 @@
     </div>
 
     <div class="menu_clock">
-        <button type="button" class="allButtons" id="buttonMusic">
+        <button type="button" class="allButtons" id="buttonMusic" onclick="openMenu('musicMenu')">
             <img src="./assets/images/button-music.svg" alt="buttonMusic">
         </button>
 
-        <input type="checkbox" name="" class="allButtons" id="controlPlayTimer">
+        <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" >
 
-        <button type="button" class="allButtons" id="setClock" title="Temporizador">
+        <button type="button" class="allButtons" id="setClock" title="Temporizador" onclick="openMenu('setClockMenu')">
         </button>
 
         <button type="button" class="allButtons" id="buttonGear">
             <img src="./assets/images/button-gear.svg" alt="buttonGame">
         </button>
 
-        <button type="button" class="allButtons" id="buttonGameDown">
+        <button type="button" class="allButtons" id="buttonGameDown" onclick="openMenu('gameMenu')">
             <img src="./assets/images/button-paw.svg" alt="buttonGame">
         </button>
     </div>
@@ -58,6 +58,21 @@
         <button title="Close" id="close" class="button-close" onclick="closeMenu('perfilMenu')">x</button>
         <p>Em breve mais funções</p>
         <button title="Em breve mais funções"  class="button-menu">Login</button>
+    </menu>
+    <menu class="dropdown_menu" id="musicMenu">
+        <button title="Close" id="close" class="button-close" onclick="closeMenu('musicMenu')">x</button>
+        <p>Em breve mais funções</p>
+        <button title="Em breve mais funções"  class="button-menu">Volume</button>
+    </menu>
+    <menu class="dropdown_menu" id="setClockMenu">
+        <button title="Close" id="close" class="button-close" onclick="closeMenu('setClockMenu')">x</button>
+        <p>Em breve mais funções</p>
+        <button title="Em breve mais funções"  class="button-menu">Tipo de timer</button>
+    </menu>
+    <menu class="dropdown_menu" id="gameMenu">
+        <button title="Close" id="close" class="button-close" onclick="closeMenu('gameMenu')">x</button>
+        <p>Em breve mais funções</p>
+        <button title="Em breve mais funções"  class="button-menu">Jogo</button>
     </menu>
 
     <script src="./assets/js/set_music.js"></script>
