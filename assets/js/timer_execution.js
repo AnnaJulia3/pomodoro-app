@@ -2,7 +2,7 @@ var controlPlayTimer = document.getElementById("controlPlayTimer");
 var timerText = document.getElementById("timerText");
 var buttonMusic = document.getElementById("buttonMusic");
 var buttonTopGame = document.getElementById("buttonGameTop");
-var clockSpace = document.getElementById("clock_space");
+var progress_clock_space = document.getElementById("progress_clock_space");
 
 const TYPE_POMODORO = 0;
 const TYPE_BREAK = 1;
@@ -20,6 +20,7 @@ var minutes;
 let timerProgress;
 
 function stopTimer() {
+    stopProgressBar();
     clearInterval(timerProgress);
     buttonMusic.style.display = "flex";
     if (!audioBackground.paused) audioBackground.pause();
@@ -44,18 +45,20 @@ function playTimer() {
 
 controlPlayTimer.addEventListener("click", () => {
     if (controlPlayTimer.checked) {
+        
         audioStartPomodoro.currentTime = 0;
         audioStartPomodoro.play();
         timerNow = 0;
         buttonMusic.style.display = "none";
         buttonTopGame.style.display = "none";
-        clockSpace.setAttribute("theme", "pomodoro");
+        progress_clock_space.setAttribute("theme", "pomodoro");
 
         if (!audioEndBreak.paused) {
             audioEndBreak.pause();
             audioEndBreak.currentTime = 0;
         }
         if (nowType == TYPE_STOPWATCH) {
+            progressBar();
             endTime = maxTime;
         }
         else {
@@ -63,9 +66,10 @@ controlPlayTimer.addEventListener("click", () => {
                 endTime = breakTime * 60;
                 nowType = TYPE_POMODORO;
                 buttonTopGame.style.display = "flex";
-                clockSpace.setAttribute("theme", "break");
+                progress_clock_space.setAttribute("theme", "break");
             }
             else {
+                progressBar();
                 endTime = pomodoroTime * 60;
                 if (nowType == TYPE_POMODORO) nowType = TYPE_BREAK;
             }

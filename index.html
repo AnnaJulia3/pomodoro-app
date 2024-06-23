@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/space_clock.css">
 </head>
 
 <body>
@@ -20,12 +21,28 @@
         </button>
     </header>
 
-    <div class="conteiner">
+    <div id="conteiner_clock">
         <button type="button" class="topGame" id="buttonGameTop">
             <img src="./assets/images/dog-and-cup-dark.png" alt="cup and dog">
         </button>
-        <div class="clock_space" theme="pomodoro" id="clock_space">
-            <h1 id="timerText">00:00</h1>
+        <div class="progress_clock_space" theme="pomodoro" id="progress_clock_space">
+            
+            <div class="cub" id="cub2"></div>
+            <div class="cub" id="cub1"></div>
+            
+            <div class="cub" id="cub4"></div>
+
+            <div class="conteiners_cub" id="conteiner_cub5">
+            <div class="cub" id="cub5"></div>
+            </div>
+
+            <div class="conteiners_cub" id="conteiner_cub3">
+            <div class="cub" id="cub3"></div>
+            </div>
+
+            <div class="clock_space" id="clock_space">
+                <h1 id="timerText">00:00</h1>
+            </div>
         </div>
     </div>
 
@@ -34,7 +51,7 @@
             <img src="./assets/images/button-music.svg" alt="buttonMusic">
         </button>
 
-        <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" >
+        <input type="checkbox" name="" class="allButtons" id="controlPlayTimer">
 
         <button type="button" class="allButtons" id="setClock" title="Temporizador" onclick="openMenu(2)">
         </button>
@@ -50,31 +67,33 @@
 
     <footer>
         <p>
-            @ 2024. Todos os Direitos Reservados. Anna Júlia Miranda. Em desenvolvimento por <a href="https://github.com/AnnaJulia3">AJ</a>
+            @ 2024. Todos os Direitos Reservados. Anna Júlia Miranda. Em desenvolvimento por <a
+                href="https://github.com/AnnaJulia3">AJ</a>
         </p>
     </footer>
 
     <menu class="dropdown_menu" id="perfilMenu">
         <button title="Close" id="close" class="button-close" onclick="closeMenu('perfilMenu')">x</button>
         <p>Em breve mais funções</p>
-        <button title="Em breve mais funções"  class="button-menu">Login</button>
+        <button title="Em breve mais funções" class="button-menu">Login</button>
     </menu>
     <menu class="dropdown_menu" id="musicMenu">
         <button title="Close" id="close" class="button-close" onclick="closeMenu('musicMenu')">x</button>
         <p>Em breve mais funções</p>
-        <button title="Em breve mais funções"  class="button-menu">Volume</button>
+        <button title="Em breve mais funções" class="button-menu">Volume</button>
     </menu>
     <menu class="dropdown_menu" id="setClockMenu">
         <button title="Close" id="close" class="button-close" onclick="closeMenu('setClockMenu')">x</button>
         <p>Em breve mais funções</p>
-        <button title="Em breve mais funções"  class="button-menu">Tipo de timer</button>
+        <button title="Em breve mais funções" class="button-menu">Tipo de timer</button>
     </menu>
     <menu class="dropdown_menu" id="gameMenu">
         <button title="Close" id="close" class="button-close" onclick="closeMenu('gameMenu')">x</button>
         <p>Em breve mais funções</p>
-        <button title="Em breve mais funções"  class="button-menu">Jogo</button>
+        <button title="Em breve mais funções" class="button-menu">Jogo</button>
     </menu>
 
+    <script src="./assets/js/animation.js"></script>
     <script src="./assets/js/set_music.js"></script>
     <script src="./assets/js/timer_execution.js"></script>
     <script src="./assets/js/change_theme_and_displays.js"></script>
