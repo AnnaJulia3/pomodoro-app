@@ -13,10 +13,7 @@ var pomodoroTime = 25;
 var breakTime = 5;
 var stepTimer = -1;
 var nowType = 0;
-var timerNow;
-var endTime;
-var seconds;
-var minutes;
+var timerNow, endTime;
 let timerProgress;
 
 function stopTimer() {
@@ -28,8 +25,8 @@ function stopTimer() {
 
 function playTimer() {
     timerNowInMinutes = timerNow / 60;
-    minutes = Math.trunc(timerNowInMinutes).toString().padStart(2, '0');
-    seconds = Math.trunc(timerNow % 60).toString().padStart(2, '0');
+    var minutes = Math.trunc(timerNowInMinutes).toString().padStart(2, '0');
+    var seconds = Math.trunc(timerNow % 60).toString().padStart(2, '0');
     timerText.textContent = `${minutes}:${seconds}`;
     if (nowType != TYPE_POMODORO) audioBackground.play();
     if (timerNowInMinutes == endTime) {

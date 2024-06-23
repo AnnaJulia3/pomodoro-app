@@ -28,13 +28,13 @@
     position: absolute;
 }
 
-.cub{
+.cub {
     top: 0%;
     display: none;
     background-color: var(--border-color-blue);
 }
 
-.conteiners_cub{
+.conteiners_cub {
     height: 10%;
     background-color: var(--border-color-gray);
 }
