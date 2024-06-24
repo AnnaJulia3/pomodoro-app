@@ -3,7 +3,7 @@
 .middle_star,
 .small_star {
     position: absolute;
-    /* display: none; */
+    display: none;
 }
 
 .big_star {
@@ -73,4 +73,18 @@
 
     bottom: 12%;
     right: 10%;
+}
+
+@media(min-width: 769px) {
+    .big_star {
+        width: 40.62px;
+    }
+
+    .middle_star {
+        width: 24.7px;
+    }
+
+    .small_star {
+        width: 16.25px;
+    }
 }

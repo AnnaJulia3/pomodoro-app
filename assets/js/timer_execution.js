@@ -32,7 +32,10 @@ function playTimer() {
     if (timerNowInMinutes == endTime) {
         controlPlayTimer.checked = false;
         stopTimer();
-        if (nowType != TYPE_POMODORO) audioSucessPomodoro.play();
+        if (nowType != TYPE_POMODORO){
+            add_count_pomodoro();
+            audioSucessPomodoro.play();
+        } 
         else {
             audioEndBreak.play();
         }
@@ -64,6 +67,7 @@ controlPlayTimer.addEventListener("click", () => {
                 nowType = TYPE_POMODORO;
                 buttonTopGame.style.display = "flex";
                 progress_clock_space.setAttribute("theme", "break");
+                not_show_count_pomodoro();
             }
             else {
                 progressBar();

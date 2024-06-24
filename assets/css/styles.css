@@ -302,4 +302,12 @@ a {
         padding: 50px 90px;
     }
 
+    .topGame {
+    height: 52px;
+
+    >img {
+        width: 52px;
+    }
+    }
+
 }

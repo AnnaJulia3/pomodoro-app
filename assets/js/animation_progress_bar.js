@@ -1,3 +1,4 @@
+// --- Animation Bar ---
 var bar1 = document.getElementById("cub1");
 var bar2 = document.getElementById("cub2");
 var bar3 = document.getElementById("cub3");
@@ -23,11 +24,6 @@ function animation_bars() {
     timeOutBarNone = setTimeout(noneDisplayProgressBars, 60005); //8s
 }
 
-function progressBar() {
-    loopAnimationTimerBar = setInterval(animation_bars, 60010);
-    animation_bars();
-}
-
 function stopProgressBar() {
     clearInterval(loopAnimationTimerBar);
     clearTimeout(timeOutBar1);
@@ -37,4 +33,48 @@ function stopProgressBar() {
     clearTimeout(timeOutBar5);
     clearTimeout(timeOutBarNone);
     noneDisplayProgressBars();
+}
+
+// --- Intermediário ---
+function progressBar() { //pomodoro ativo
+    loopAnimationTimerBar = setInterval(animation_bars, 60010);
+    animation_bars();
+    //--- star ---
+    show_count_pomodoro();
+}
+
+// --- Count stars ---
+var count_pomodoro = 0;
+var listStars = [
+    document.getElementById('small_star_above1'),
+    document.getElementById('middle_star_above1'),    
+    document.getElementById('middle_star_below'),
+    document.getElementById('big_star_below'),
+    document.getElementById('small_star_below'),
+    document.getElementById('small_star_above2'),
+    document.getElementById('middle_star_above2'),
+    document.getElementById('big_star_above')
+];
+
+function add_count_pomodoro() { // sucess
+    if (count_pomodoro < 8){
+        listStars[count_pomodoro].style.display = "flex";
+        count_pomodoro++;  
+    }   
+}
+
+function not_show_count_pomodoro() { // em break
+    if (count_pomodoro > -1) {
+        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++){
+            listStars[starIndex].style.display = "none";
+        }
+    }
+}
+
+function show_count_pomodoro() { // em pomodoro
+    if (count_pomodoro > -1) {
+        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++){
+            listStars[starIndex].style.display = "flex";
+        }
+    }
 }
