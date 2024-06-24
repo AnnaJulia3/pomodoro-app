@@ -1,0 +1,76 @@
+/* --- Base stars --- */
+.big_star,
+.middle_star,
+.small_star {
+    position: absolute;
+    /* display: none; */
+}
+
+.big_star {
+    width: 31.25px;
+}
+
+.middle_star {
+    width: 19px;
+}
+
+.small_star {
+    width: 12.5px;
+}
+
+/* --- Stars above ---*/
+#small_star_above1 {
+    top: 8%;
+    left: 20%;
+}
+
+#middle_star_above1 {
+    top: 10%;
+    left: 12%;
+}
+
+#small_star_above2 {
+    top: 20%;
+    left: 8%;
+}
+
+#big_star_above {
+    top: 20%;
+    left: 13%;
+}
+
+#middle_star_above2 {
+    top: 28%;
+    left: 4%;
+}
+
+/* --- Stars below --- */
+#small_star_below {
+    /* bottom: 30%;
+    right: 17%;
+
+    bottom: 5%;
+    right: 19%; */
+
+    bottom: 32%;
+    right: 16%;
+}
+
+#middle_star_below {
+    /* bottom: 5%;
+    right: 21%;
+
+    bottom: 25%;
+    right: 5%; */
+
+    bottom: 27%;
+    right: 6%;
+}
+
+#big_star_below {
+    /* bottom: 10%;
+    right: 10%; */
+
+    bottom: 12%;
+    right: 10%;
+}

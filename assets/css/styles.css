@@ -27,9 +27,13 @@
 /* --- Modo claro/escuro botoes --- */
 html[data-theme="light"] {
 
-    img,
     #controlPlayTimer {
         filter: invert(1);
+    }
+    button{
+        >img{
+            filter: invert(1);
+        }
     }
 }
 
