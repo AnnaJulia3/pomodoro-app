@@ -28,7 +28,7 @@ function progressBar() {
     animation_bars();
 }
 
-function stopProgressBars() {
+function stopProgressBar() {
     clearInterval(loopAnimationTimerBar);
     clearTimeout(timeOutBar1);
     clearTimeout(timeOutBar2);
