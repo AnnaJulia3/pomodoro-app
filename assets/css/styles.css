@@ -276,7 +276,7 @@ a {
     }
 }
 
-/* --- Responsividade específica --- */
+/* --- Responsividade --- */
 @media(min-width: 481px) {
     .menu_clock {
         position: absolute;
