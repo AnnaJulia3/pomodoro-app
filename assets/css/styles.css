@@ -2,6 +2,7 @@
 :root,
 :root[data-theme="dark"] {
     --text-color: #d9d9d9;
+    --text-select-color: #B80000;
     --icon-color-red: #B80000;
     /* --icon-color-red: #47ffff; */
     --border-color-blue: #164743;
@@ -9,11 +10,12 @@
     --header-color: #1E1E1E;
     --background-color: #262626;
     --image-tomato-button: url("../images/logo-dark-tomato.svg");
-    --active-button-control-play-clock: #C27600;
+    --active-elements-to-invert: #C27600;
 }
 
 :root[data-theme="light"] {
     --text-color: #000000;
+    --text-select-color: #FF0000; ;
     /* --icon-color-red: #FF0000; */
     --icon-color-red: #00ffff;
     --border-color-blue: #95DBD1;
@@ -21,7 +23,7 @@
     --header-color: #eac492;
     --background-color: #eae5cb;
     --image-tomato-button: url("../images/logo-light-tomato.svg");
-    --active-button-control-play-clock: #3d89ff;
+    --active-elements-to-invert: #3d89ff;
 }
 
 /* --- Modo claro/escuro botoes --- */
@@ -147,13 +149,10 @@ h1 {
 #toggleTheme {
     width: 60px;
     height: 60px;
+    background-image: url("../images/button-dark-switch.svg");
 
     &:checked {
         background-image: url("../images/button-light-switch.svg");
-    }
-
-    &:not(:checked) {
-        background-image: url("../images/button-dark-switch.svg");
     }
 }
 
@@ -177,29 +176,27 @@ h1 {
 }
 
 #controlPlayTimer {
+    background-image: url("../images/button-dark-play-circle.svg");
+    background-color: var(--icon-color-red);
+    ~#buttonGear {
+        display: none;
+    }
+
     &:checked {
         background-image: url("../images/button-x-circle.svg");
+        background-color: transparent;
 
         ~#setClock,
         ~#buttonGameDown {
             display: none;
         }
-    }
-
-    &:not(:checked) {
-        background-image: url("../images/button-dark-play-circle.svg");
-
-        &:not(:active) {
-            background-color: var(--icon-color-red);
-        }
-
         ~#buttonGear {
-            display: none;
+            display: flex;
         }
     }
 
     &:active {
-        background-color: var(--active-button-control-play-clock);
+        background-color: var(--active-elements-to-invert);
     }
 }
 
@@ -218,7 +215,7 @@ a {
     color: var(--text-color);
 
     &:hover {
-        color: var(--icon-color-red);
+        color: var(--text-select-color);
     }
 }
 
