@@ -8,11 +8,11 @@ const TYPE_POMODORO = 0;
 const TYPE_BREAK = 1;
 const TYPE_STOPWATCH = 2;
 const TYPE_TIMING_DEVICE = 3;
-const MAX_TIME_IN_SECONDS = 43200;  // 12h = 43200s
+var MAX_TIME_IN_SECONDS = 43200;  // 12h = 43200s
 var pomodoroTimeInSeconds = 1500;  // 25m = 1500s
 var breakTimeInSeconds = 300;     // 05m = 300s
 var stepTimer = -1;
-var nowType = 0;
+var nowType = TYPE_POMODORO;
 var timerNowInSeconds, endNowInSeconds;
 var initTimeInSeconds = pomodoroTimeInSeconds;
 var endTimeInSeconds = 0;
@@ -20,7 +20,8 @@ var initBreakInSeconds = breakTimeInSeconds;
 var endBreakInSeconds = 0;
 let timerProgress;
 
-function formatMinutes(){
+
+function formatMinutes() {
     timerNowInMinutes = timerNowInSeconds / 60;
     var minutes = Math.trunc(timerNowInMinutes).toString().padStart(2, '0');
     var seconds = Math.trunc(timerNowInSeconds % 60).toString().padStart(2, '0');
@@ -71,7 +72,7 @@ function stopTimer() {
 function playTimer() {
     formatMinutes();
     if (nowType != TYPE_POMODORO) audioBackground.play();
-    if (timerNowInSeconds ==  endNowInSeconds) {
+    if (timerNowInSeconds == endNowInSeconds) {
         controlPlayTimer.checked = false;
         stopTimer();
         if (nowType != TYPE_POMODORO) {
@@ -86,6 +87,8 @@ function playTimer() {
 }
 
 controlPlayTimer.addEventListener("click", () => {
+
+
     if (controlPlayTimer.checked) {
         audioStartPomodoro.currentTime = 0;
         audioStartPomodoro.play();
@@ -95,6 +98,10 @@ controlPlayTimer.addEventListener("click", () => {
         if (!audioEndBreak.paused) {
             audioEndBreak.pause();
             audioEndBreak.currentTime = 0;
+        }
+        if (!audioSucessPomodoro.paused) {
+            audioSucessPomodoro.pause();
+            audioSucessPomodoro.currentTime = 0;
         }
 
         if (nowType == TYPE_BREAK) {

@@ -46,26 +46,39 @@ function progressBar() { //pomodoro ativo
 // --- Count stars ---
 var count_pomodoro = 0;
 var listStars = [
+    document.getElementById('micro_star_above3'),
+    document.getElementById('micro_star_above2'),
+    document.getElementById('micro_star_above1'),
+
+
+    document.getElementById('micro_star_below2'),
+    document.getElementById('micro_star_below3'),
+    document.getElementById('micro_star_below4'),
+    document.getElementById('micro_star_below5'),
+
     document.getElementById('small_star_above1'),
-    document.getElementById('middle_star_above1'),    
-    document.getElementById('middle_star_below'),
+    document.getElementById('middle_star_above1'),
     document.getElementById('big_star_below'),
+    document.getElementById('middle_star_below'),
     document.getElementById('small_star_below'),
     document.getElementById('small_star_above2'),
     document.getElementById('middle_star_above2'),
+
+    document.getElementById('micro_star_below1'),
+
     document.getElementById('big_star_above')
 ];
 
 function add_count_pomodoro() { // sucess
-    if (count_pomodoro < 8){
+    if (count_pomodoro < 16) {
         listStars[count_pomodoro].style.display = "flex";
-        count_pomodoro++;  
-    }   
+        count_pomodoro++;
+    }
 }
 
 function not_show_count_pomodoro() { // em break
     if (count_pomodoro > -1) {
-        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++){
+        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++) {
             listStars[starIndex].style.display = "none";
         }
     }
@@ -73,7 +86,7 @@ function not_show_count_pomodoro() { // em break
 
 function show_count_pomodoro() { // em pomodoro
     if (count_pomodoro > -1) {
-        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++){
+        for (var starIndex = 0; starIndex < count_pomodoro; starIndex++) {
             listStars[starIndex].style.display = "flex";
         }
     }
