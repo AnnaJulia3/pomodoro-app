@@ -16,7 +16,6 @@
 :root[data-theme="light"] {
     --text-color: #000000;
     --text-select-color: #FF0000;
-    ;
     /* --icon-color-red: #FF0000; */
     --icon-color-red: #00ffff;
     --border-color-blue: #95DBD1;
