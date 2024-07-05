@@ -3,7 +3,6 @@ var timerText = document.getElementById("timerText");
 var buttonMusic = document.getElementById("buttonMusic");
 var buttonTopGame = document.getElementById("buttonGameTop");
 var progress_clock_space = document.getElementById("progress_clock_space");
-
 const TYPE_POMODORO = 0;
 const TYPE_BREAK = 1;
 const TYPE_STOPWATCH = 2;

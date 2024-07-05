@@ -15,7 +15,8 @@
 
 :root[data-theme="light"] {
     --text-color: #000000;
-    --text-select-color: #FF0000; ;
+    --text-select-color: #FF0000;
+    ;
     /* --icon-color-red: #FF0000; */
     --icon-color-red: #00ffff;
     --border-color-blue: #95DBD1;
@@ -32,8 +33,9 @@ html[data-theme="light"] {
     #controlPlayTimer {
         filter: invert(1);
     }
-    button{
-        >img{
+
+    button {
+        >img {
             filter: invert(1);
         }
     }
@@ -178,6 +180,7 @@ h1 {
 #controlPlayTimer {
     background-image: url("../images/button-dark-play-circle.svg");
     background-color: var(--icon-color-red);
+
     ~#buttonGear {
         display: none;
     }
@@ -190,6 +193,7 @@ h1 {
         ~#buttonGameDown {
             display: none;
         }
+
         ~#buttonGear {
             display: flex;
         }
@@ -242,11 +246,16 @@ a {
     }
 
     .topGame {
-    height: 52px;
+        height: 52px;
 
-    >img {
-        width: 52px;
-    }
+        >img {
+            width: 52px;
+        }
     }
 
+}
+
+/* --- Controle --- */
+input[type="range"]{
+    accent-color: #C27600;
 }
