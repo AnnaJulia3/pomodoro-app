@@ -1,0 +1,30 @@
+[
+  {
+    "id": "01",
+    "username": "USER_NAME",
+    "email": "EMAIL",
+    "celular": "CELULAR",
+    "password": "PASSWORD"
+  },
+  {
+    "id": "02",
+    "username": "fulano",
+    "email": "fulano@gmail",
+    "celular": "99009900",
+    "password": "123"
+  },
+  {
+    "id": "03",
+    "username": "Anna",
+    "email": "a@gmail.com",
+    "celular": "9999",
+    "password": "321"
+  },
+  {
+    "id": "04",
+    "username": "1",
+    "email": "1",
+    "celular": "1",
+    "password": "321"
+  }
+]

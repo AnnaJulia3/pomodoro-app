@@ -73,7 +73,7 @@ div {
     /* padding: 0.5rem 1rem; */
 }
 
-button {
+button, input[ type='submit'] {
     font-family: "Roboto";
 }
 

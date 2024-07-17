@@ -1,0 +1,53 @@
+/* @import "../assets/css/styles.css"; */
+
+.inputButton{
+    /* margin-top: 5px; */
+
+    appearance: none;
+    background-color: var(--header-color);
+    position: relative;
+
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: var(--text-color);
+
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 1rem; 
+
+    &:active {
+        background-color: #C27600;
+    }
+
+    padding: 10px;
+    /* width: 100%; */
+
+    /* text-align: left; */
+
+    border: solid var(--border-color-gray);
+}
+
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    
+    
+}
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+p,
+h3 {
+    margin: 30px;
+}
+
+input,a {
+    margin: 2px 0px 15px 0px;
+}

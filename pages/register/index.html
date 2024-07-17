@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Tomira</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../assets/css/styles.css" />
+    <link rel="stylesheet" href="../../assets/css/menu.css" />
+    <link rel="stylesheet" href="../../assets/css/forms.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h3>Seja bem vindo!</h3>
+      <form action="register.php" method="post" autocomplete="on">
+        <label for="name">Nome</label>
+        <input type="text" name="name" id="id_name" title="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="id_email" title="email" />
+        <label for="celular">Celular</label>
+        <input type="text" name="celular" id="id_celular" title="celular" />
+        <input type="submit" value="Enviar" class="inputButton" />
+        <a href="../../index.html">Continuar sem cadastro</a>
+        <a href="../page_login/index.html">Fazer login</a>
+
+      </form>
+    </section>
+  </body>
+</html>
