@@ -59,7 +59,7 @@ body {
 
 header,
 div {
-  width: 100dvw;
+  width: 100%;
   display: flex;
   flex-flow: wrap;
   /* flex-flow: row wrap;  */

@@ -1,0 +1,17 @@
+.disconnected{
+  display: none; 
+  /* display: flex; */
+} 
+
+#perfilMenu{
+  display: flex;
+  width: 280px;
+}
+
+#perfil_connected{
+  margin: 0px 45%  10px;  
+}
+
+#button_sync, #button_account_setup{
+  margin: 10px 0px;
+}
