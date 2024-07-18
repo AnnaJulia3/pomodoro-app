@@ -1,146 +1,157 @@
 .progress_clock_space {
-    position: fixed;
-    top: 28%;
-    width: auto;
-    border-radius: 150px;
+  position: fixed;
+  top: 28%;
+  width: auto;
+  border-radius: 150px;
 }
 
 .progress_clock_space[theme="pomodoro"] {
-    background-color: var(--border-color-gray);
+  background-color: var(--border-color-gray);
 
-    #conteiner_cub3,
-    #conteiner_cub5 {
-        display: flex;
-    }
+  #conteiner_cub3,
+  #conteiner_cub5 {
+    display: flex;
+  }
 }
 
 .progress_clock_space[theme="break"] {
-    background-color: var(--border-color-blue);
+  background-color: var(--border-color-blue);
 
-    #conteiner_cub3,
-    #conteiner_cub5 {
-        display: none;
-    }
+  #conteiner_cub3,
+  #conteiner_cub5 {
+    display: none;
+  }
 }
 
 .conteiners_cub,
 .cub {
-    position: absolute;
+  position: absolute;
 }
 
 .cub {
-    top: 0%;
-    display: none;
-    background-color: var(--border-color-blue);
+  top: 0%;
+  display: none;
+  background-color: var(--border-color-blue);
 }
 
 .conteiners_cub {
-    height: 10%;
-    background-color: var(--border-color-gray);
+  height: 10%;
+  background-color: var(--border-color-gray);
 }
 
 #cub1 {
-    left: 50%;
-    width: 20%;
-    height: 10%;
-    animation: progress-animation-50-bar 8s linear;
+  left: 50%;
+  width: 20%;
+  height: 10%;
+  animation: progress-animation-50-bar 8s linear;
 }
 
 #cub2 {
-    border-radius: 50%;
-    right: 0%;
-    width: 192px;
-    height: 100%;
-    background: linear-gradient(to right, var(--border-color-blue) 5%, var(--border-color-blue) 50%, var(--border-color-gray) 50%, var(--border-color-gray) 100%);
-    animation: animation-routate 15s linear both;
-
+  border-radius: 50%;
+  right: 0%;
+  width: 192px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--border-color-blue) 5%,
+    var(--border-color-blue) 50%,
+    var(--border-color-gray) 50%,
+    var(--border-color-gray) 100%
+  );
+  animation: animation-routate 15s linear both;
 }
 
 #conteiner_cub3 {
-    top: 90%;
-    right: 30%;
-    width: 40%;
+  top: 90%;
+  right: 30%;
+  width: 40%;
 }
 
 #cub3 {
-    right: 0px;
-    width: 100%;
-    height: 100%;
-    animation: progress-animation-100-bar 16s linear;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  animation: progress-animation-100-bar 16s linear;
 }
 
 #cub4 {
-    border-radius: 50%;
-    left: 0%;
-    width: 192px;
-    height: 100%;
-    background: linear-gradient(to right, var(--border-color-gray) 0%, var(--border-color-gray) 50%, var(--border-color-blue) 50%, var(--border-color-blue) 100%);
-    animation: animation-routate 15s linear both;
+  border-radius: 50%;
+  left: 0%;
+  width: 192px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--border-color-gray) 0%,
+    var(--border-color-gray) 50%,
+    var(--border-color-blue) 50%,
+    var(--border-color-blue) 100%
+  );
+  animation: animation-routate 15s linear both;
 }
 
 #conteiner_cub5 {
-    top: 0%;
-    left: 30%;
-    width: 21%;
+  top: 0%;
+  left: 30%;
+  width: 21%;
 }
 
 #cub5 {
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    animation: progress-animation-100-bar 7s linear;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  animation: progress-animation-100-bar 7s linear;
 }
 
 /* --- Animações --- */
 
 @keyframes progress-animation-50-bar {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 22%;
-    }
+  100% {
+    width: 22%;
+  }
 }
 
 @keyframes animation-routate {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(180deg);
-    }
+  100% {
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes progress-animation-100-bar {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    100% {
-        width: 100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
 /* --- Responsividade --- */
-@media(min-width: 769px) {
-    #cub1 {
-        width: 25%;
-    }
+@media (min-width: 769px) {
+  #cub1 {
+    width: 25%;
+  }
 
-    #cub2,
-    #cub4 {
-        width: 240px;
-    }
+  #cub2,
+  #cub4 {
+    width: 240px;
+  }
 
-    #conteiner_cub3 {
-        right: 25%;
-        width: 50%;
-    }
+  #conteiner_cub3 {
+    right: 25%;
+    width: 50%;
+  }
 
-    #conteiner_cub5 {
-        left: 25%;
-        width: 25%;
-    }
+  #conteiner_cub5 {
+    left: 25%;
+    width: 25%;
+  }
 }
