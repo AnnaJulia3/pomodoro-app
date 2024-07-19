@@ -123,66 +123,69 @@
     <!-- target="_blank" -->
   </menu>
 
-  <!-- Menu volume -->
-  <menu class="dropdown_menu" id="musicMenu">
-    <button title="Close" id="close" class="button-close" onclick="closeMenu('musicMenu')">x</button>
+  <menu class="extend_menus" id="sessionMenu">
+    <!-- Menu volume -->
+    <menu class="dropdown_menu" id="musicMenu">
+      <button title="Close" id="close" class="button-close" onclick="closeMenu('musicMenu')">x</button>
 
-    <h4>Volume</h4>
+      <h4>Volume</h4>
 
-    <label for="audioVolumeGlobal">
-      Global:
-    </label>
-    <input type="range" id="audioVolumeGlobal" name="volumeGlobal" min="0" max="100" step="1">
+      <label for="audioVolumeGlobal">
+        Global:
+      </label>
+      <input type="range" id="audioVolumeGlobal" name="volumeGlobal" min="0" max="100" step="1">
 
-    <label for="audioVolumeAlarm">
-      Alarme (fim de sessão):
-    </label>
-    <input type="range" id="audioVolumeAlarm" name="volumeAlarm" min="0" max="100" step="1">
+      <label for="audioVolumeAlarm">
+        Alarme (fim de sessão):
+      </label>
+      <input type="range" id="audioVolumeAlarm" name="volumeAlarm" min="0" max="100" step="1">
 
-    <label for="audioVolumeBackground">
-      Música de fundo:
-    </label>
-    <input type="range" id="audioVolumeBackground" name="volumeBackground" min="0" max="100" step="1">
+      <label for="audioVolumeBackground">
+        Música de fundo:
+      </label>
+      <input type="range" id="audioVolumeBackground" name="volumeBackground" min="0" max="100" step="1">
 
-    <label for="audioVolumeInteraction">
-      Interações:
-    </label>
-    <input type="range" id="audioVolumeInteraction" name="volumeInteraction" min="0" max="100" step="1">
-    <br>
-    <h4>Sons</h4>
-    <label for="changeMusicBackground"> Música de fundo: </label>
-    <select name="changeMusicBackground" id="changeMusicBackground">
-      <option value='fire'>Brasas | Fogo</option>
-      <option value='calm'>Suave Acústico</option>
-      <option value='clockTick'>Tick de relógio</option>
-      <option value='lofi'>Lofi</option>
-      <option value='runningWater'>Água escorrendo</option>
-      <option value='eletronic'>Eletrônica</option>
-    </select>
-  </menu>
-  <!-- Menu tipo de relógio -->
-  <menu class="dropdown_menu" id="setClockMenu">
-    <button title="Close" id="close" class="button-close" onclick="closeMenu('setClockMenu')">x</button>
+      <label for="audioVolumeInteraction">
+        Interações:
+      </label>
+      <input type="range" id="audioVolumeInteraction" name="volumeInteraction" min="0" max="100" step="1">
+      <br>
+      <h4>Sons</h4>
+      <label for="changeMusicBackground"> Música de fundo: </label>
+      <select name="changeMusicBackground" id="changeMusicBackground">
+        <option value='fire'>Brasas | Fogo</option>
+        <option value='calm'>Suave Acústico</option>
+        <option value='clockTick'>Tick de relógio</option>
+        <option value='lofi'>Lofi</option>
+        <option value='runningWater'>Água escorrendo</option>
+        <option value='eletronic'>Eletrônica</option>
+      </select>
+    </menu>
+    <!-- Menu tipo de relógio -->
+    <menu class="dropdown_menu" id="setClockMenu">
+      <button title="Close" id="close" class="button-close" onclick="closeMenu('setClockMenu')">x</button>
 
-    <label for="type_timer"> Tipo de timer: </label>
-    <select name="Tipo de time:" id="type_timer" onchange="changeTypeTimer()">
-      <option value=0>Pomodoro clássico</option>
-      <option value=1>Pomodoro crescente</option>
-      <option value=2>Cronômetro</option>
-      <option value=3>Temporizador</option>
-    </select>
-  </menu>
+      <label for="type_timer"> Tipo de timer: </label>
+      <select name="Tipo de time:" id="type_timer" onchange="changeTypeTimer()">
+        <option value=0>Pomodoro clássico</option>
+        <option value=1>Pomodoro crescente</option>
+        <option value=2>Cronômetro</option>
+        <option value=3>Temporizador</option>
+      </select>
+    </menu>
 
-  <menu class="dropdown_menu" id="gameMenu">
-    <button title="Close" id="close" class="button-close" onclick="closeMenu('gameMenu')">x</button>
-    <p>Em breve mais funções</p>
-    <button title="Em breve mais funções" class="button-menu">Jogo</button>
+    <menu class="dropdown_menu" id="gameMenu">
+      <button title="Close" id="close" class="button-close" onclick="closeMenu('gameMenu')">x</button>
+      <p>Em breve mais funções</p>
+      <button title="Em breve mais funções" class="button-menu">Jogo</button>
+    </menu>
   </menu>
 
   <script src="./assets/js/animation_progress_bar.js"></script>
   <script src="./assets/js/set_music.js"></script>
   <script src="./assets/js/timer_execution.js"></script>
-  <script src="./assets/js/change_theme_and_displays.js"></script>
+  <script src="./assets/js/change_theme.js"></script>
+  <script src="./assets/js/menu_interaction.js"></script>
   <!-- <script src="./assets/js/var_to_test.js"></script> -->
 </body>
 

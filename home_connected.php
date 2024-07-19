@@ -16,8 +16,8 @@ if (isset($_POST['email'])) {
   $host  = $_SERVER['HTTP_HOST'];
   $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
   if (count((array) $data_user) < 1) {
-    unset ($_SESSION['user_id']);
-    unset ($_SESSION['user_email']);
+    unset($_SESSION['user_id']);
+    unset($_SESSION['user_email']);
     header("Location: http://$host$uri/./pages/page_login/login.php"); //redireciona
     exit(); // assegurar que nada mais depois do redirecionamento será executado
   }
@@ -27,7 +27,7 @@ if (isset($_POST['email'])) {
   if ((!isset($_SESSION['user_id']) == true) and (!isset($_SESSION['user_email']) == true)) {
     header('location:index.html');
   }
-  
+
   $logado = $_SESSION['user_id'];
   $email = $_SESSION['user_email'];
   $data = extract_data_users("./to_simple_test/bd.json");
@@ -181,7 +181,7 @@ echo "<script>var dataUser = $json;</script>";
 
       <p>Email conectado:</p>
       <p id="email_user">email do usuário</p>
-    
+
     </div>
   </menu>
 
@@ -244,7 +244,8 @@ echo "<script>var dataUser = $json;</script>";
   <script src="./assets/js/animation_progress_bar.js"></script>
   <script src="./assets/js/set_music.js"></script>
   <script src="./assets/js/timer_execution.js"></script>
-  <script src="./assets/js/change_theme_and_displays.js"></script>
+  <script src="./assets/js/change_theme.js"></script>
+  <script src="./assets/js/menu_interaction.js"></script>
   <!-- <script src="./assets/js/var_to_test.js"></script> -->
   <script src="./assets/js/home_connected.js"></script>
 </body>
