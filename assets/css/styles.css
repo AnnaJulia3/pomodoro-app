@@ -42,7 +42,7 @@ html[data-theme="light"] {
 /* --- Elementos base --- */
 * {
   margin: 0px;
-  padding: 0;
+  padding: 0px;
   box-sizing: border-box;
   vertical-align: center;
 }
@@ -55,16 +55,18 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
 header,
 div {
   width: 100%;
   display: flex;
-  flex-flow: wrap;
-  /* flex-flow: row wrap;  */
+  /* flex-flow: wrap; */
+  flex-flow: row wrap; 
   align-items: center;
-  /* text-align: center; */
+  text-align: center;
 }
 
 div {
@@ -85,6 +87,7 @@ header {
 }
 
 #conteiner_clock {
+  position: absolute;
   margin-top: 12vh;
   height: 300px;
   display: flex;
@@ -255,4 +258,5 @@ a {
 /* --- Controle --- */
 input[type="range"] {
   accent-color: #c27600;
+  width: 90%;
 }
