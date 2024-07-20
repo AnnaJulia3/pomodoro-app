@@ -1,12 +1,12 @@
-.dropdown_menu {
+.menu-base,
+#perfil_menu {
   position: absolute;
   z-index: 4;
-  bottom: 38dvh;
-  right: 36.6vw;
 
-  display: none;
+  
+  /* display: flex; */
 
-  padding: 0px 2vw 2vw;
+  padding: 0px;
   background: var(--header-color);
   border: 3px solid;
   border-color: var(--border-color-gray);
@@ -45,7 +45,8 @@
   .button-menu,
   select,
   label,
-  p {
+  p,
+  h4 {
     padding: 10px;
     width: 100%;
 
@@ -72,8 +73,66 @@
   }
 }
 
-#perfilMenu {
+#perfil_menu {
   top: 8vh;
   right: 5vw;
   bottom: auto;
+}
+
+#perfil_menu,
+.menu-inner {
+  padding: 0px 10px 10px;
+}
+
+.menu-base {
+  display: none;
+  bottom: 36dvh;
+  max-height: 60%;
+  overflow: hidden;
+
+  > div {
+    max-width: 240px;
+  }
+}
+
+.menu-inner {
+  max-height: 60%;
+  overflow: auto;
+}
+
+.dropdown-menu {
+  display: none;
+  margin-bottom: 12px;
+}
+
+.menu-base[group="yes"] {
+  .dropdown-menu {
+    padding-bottom: 22px;
+    border-bottom: 3px solid var(--border-color-gray);
+  }
+}
+
+/* Para o Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--header-color) var(--border-color-gray);
+}
+
+/* Para o Chrome, Edge e Safari */
+*::-webkit-scrollbar {
+  /* position: inherit; */
+  width: 12px; /* width of the entire scrollbar */
+  /* border-radius: 20px; */
+}
+
+*::-webkit-scrollbar-track {
+  /*Área que envolve a barra*/
+  background: var(--border-color-gray);
+  border-radius: 20px;
+}
+*::-webkit-scrollbar-thumb {
+  /* Barra de rolagem */
+  background-color: var(--header-color);
+  border-radius: 20px;
+  border: 3px solid var(--border-color-gray);
 }

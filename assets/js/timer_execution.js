@@ -84,6 +84,7 @@ function playTimer() {
 }
 
 controlPlayTimer.addEventListener("click", () => {
+  if (openMenuSession > -1) closeMenu();
   if (controlPlayTimer.checked) {
     audioStartPomodoro.currentTime = 0;
     audioStartPomodoro.play();

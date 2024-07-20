@@ -81,6 +81,7 @@ input[type="submit"] {
 
 /* --- Divisórias --- */
 header {
+  z-index: 2;
   padding: 0rem 1rem;
   justify-content: space-between;
   background-color: var(--header-color);
@@ -88,8 +89,9 @@ header {
 
 #conteiner_clock {
   position: absolute;
-  margin-top: 12vh;
-  height: 300px;
+  z-index: -1;
+  /* margin-top: 12vh; */
+  /* height: 300px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,7 +106,7 @@ header {
   margin: 10px;
 }
 
-.menu_clock {
+.container-timer-buttons {
   padding: 1rem 1rem 2rem;
   position: absolute;
   bottom: 0px;
@@ -227,7 +229,7 @@ a {
 
 /* --- Responsividade --- */
 @media (min-width: 481px) {
-  .menu_clock {
+  .container-timer-buttons {
     position: absolute;
     top: 260px;
     background-color: transparent;
