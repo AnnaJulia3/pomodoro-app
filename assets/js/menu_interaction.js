@@ -18,16 +18,23 @@ var listMenuContainer = document.getElementsByTagName("menu");
 var listDivMenu = document.getElementsByClassName("dropdown-menu");
 
 // --- Funções fechamento
-
+function closeTimerGeneralMenu() {
+  [1, 2, 3].forEach((i) => {
+    listDivMenu.item(i).style.display = "none";
+  });
+  listMenuContainer.item(1).style.display = "none";
+  openMenuSession = -1;
+  openMenuContainer = -1;
+}
 
 function closeMenu() {
-  // if (openMenuSession == 4) closeTimerGeneralMenu();
-  // else {
+  if (openMenuSession == 4) closeTimerGeneralMenu();
+  else {
     listDivMenu.item(openMenuSession).style.display = "none";
     listMenuContainer.item(openMenuContainer).style.display = "none";
     openMenuSession = -1;
     openMenuContainer = -1;
-  // }
+  }
 }
 
 [0, 1].forEach((i) => {
@@ -56,3 +63,15 @@ function openMenuUngrouped(i) {
   });
 });
 
+buttonGear.addEventListener("click", () => {
+  let previous = openMenuSession;
+  if (openMenuSession > -1) closeMenu();
+  if (previous != 4) {
+    [1, 2, 3].forEach((i) => {
+      listDivMenu.item(i).style.display = "flex";
+    });
+    listMenuContainer.item(1).style.display = "flex";
+    openMenuSession = 4;
+    openMenuContainer = 1;
+  }
+});
