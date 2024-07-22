@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timer Pomodoro</title>
-  <meta name="description" content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil">
+  <meta name="description" content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil. Atinja suas metas com mais tranquilidade. Opções de relógio e cronômetro ajustável para sessões de foco e pausas. Use para estudar, trabalhar e realizar as tarefas que desejar!">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -154,7 +154,6 @@
           <option value='eletronic'>Eletrônica</option>
         </select>
       </div>
-      <!-- Menu tipo de relógio -->
       <div class="dropdown-menu" id="setClockMenu">
         <h4>Configurações do relógio</h4>
         <label for="type_timer"> Tipo de timer: </label>
@@ -164,8 +163,11 @@
           <option value=2>Cronômetro</option>
           <option value=3>Temporizador</option>
         </select>
+        <label for="focus_session_time_range"> Tempo de sessão de foco: </label>
+        <input title="Intervalo" type="time" name="focus_session_time_range" id="focusSessionTimeRange" min="00:00:00" max="12:00:00" value="00:25:00" step="1">
+        <label for="break_session_time_range"> Tempo de sessão de pausa: </label>
+        <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00" max="12:00:00" value="00:05:00" step="1">
       </div>
-
       <div class="dropdown-menu" id="gameMenu">
         <!-- <h4>Jogo</h4> -->
         <h4>Em breve mais funções</h4>
@@ -179,7 +181,7 @@
   <script src="./assets/js/timer_execution.js"></script>
   <script src="./assets/js/change_theme.js"></script>
   <script src="./assets/js/menu_interaction.js"></script>
-  <!-- <script src="./assets/js/var_to_test.js"></script> -->
+  <script src="./assets/js/input_var_to_timer.js"></script>
 </body>
 
 </html>
