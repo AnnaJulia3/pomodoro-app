@@ -22,25 +22,25 @@ function animation_bars() {
   timeOutBar3 = setTimeout(() => (bar3.style.display = "flex"), 22500); //17s
   timeOutBar4 = setTimeout(() => (bar4.style.display = "flex"), 38000);
   timeOutBar5 = setTimeout(() => (bar5.style.display = "flex"), 53000); //8s
-  timeOutBarNone = setTimeout(noneDisplayProgressBars, 60005); //8s
+  timeOutBarNone = setTimeout(noneDisplayProgressBars, 59990); //8s
 }
 
 function stopProgressBar() {
-  clearInterval(loopAnimationTimerBar);
-  clearTimeout(timeOutBar1);
-  clearTimeout(timeOutBar2);
-  clearTimeout(timeOutBar3);
-  clearTimeout(timeOutBar4);
-  clearTimeout(timeOutBar5);
-  clearTimeout(timeOutBarNone);
+  // clearInterval(loopAnimationTimerBar);
+  // clearTimeout(timeOutBar1);
+  // clearTimeout(timeOutBar2);
+  // clearTimeout(timeOutBar3);
+  // clearTimeout(timeOutBar4);
+  // clearTimeout(timeOutBar5);
+  // clearTimeout(timeOutBarNone);
   noneDisplayProgressBars();
 }
 
 // --- Intermediário ---
 function progressBar() {
   //pomodoro ativo
-  loopAnimationTimerBar = setInterval(animation_bars, 60010);
-  animation_bars();
+  // loopAnimationTimerBar = setInterval(animation_bars, 60000);
+  // animation_bars();
   //--- star ---
   show_count_pomodoro();
 }
