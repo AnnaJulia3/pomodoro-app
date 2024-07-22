@@ -112,11 +112,6 @@
   }
 }
 
-/* Para o Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--header-color) var(--border-color-gray);
-}
 
 /* Para o Chrome, Edge e Safari */
 *::-webkit-scrollbar {
