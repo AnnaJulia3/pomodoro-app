@@ -54,10 +54,7 @@ echo "<script>var dataUser = $json;</script>";
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/progress_bar.css">
-  <link rel="stylesheet" href="assets/css/stars.css">
-  <link rel="stylesheet" href="assets/css/menu.css">
+  <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./assets/css/home_connected.css">
 </head>
 
