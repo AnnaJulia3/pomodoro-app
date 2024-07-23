@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timer Pomodoro</title>
-  <meta name="description" content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil. Atinja suas metas com mais tranquilidade. Opções de relógio e cronômetro ajustável para sessões de foco e pausas. Use para estudar, trabalhar e realizar as tarefas que desejar!">
+  <meta name="description"
+    content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil. Atinja suas metas com mais tranquilidade. Opções de relógio e cronômetro ajustável para sessões de foco e pausas. Use para estudar, trabalhar e realizar as tarefas que desejar!">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -112,9 +113,9 @@
 
   <menu class="dropdown-menu" id="perfil_menu">
     <button type="button" title="Fechar" id="closePerfilMenu" class="button-close">x</button>
-    <p>Em breve mais funções</p>
+    <!-- <h4>Sessão não iniciada</h4> -->
     <a href="./pages/page_login/index.html" class="button-menu">Login</a>
-    <!-- target="_blank" -->
+    <a href="./pages/register/index.html" class="button-menu">Cadastrar</a>
   </menu>
 
   <menu class="menu-base" id="group_session_menu" group="no">
@@ -144,14 +145,28 @@
         </label>
         <input type="range" id="audioVolumeInteraction" name="volumeInteraction" min="0" max="100" step="1">
         <h4>Sons</h4>
-        <label for="changeMusicBackground"> Música de fundo: </label>
-        <select name="changeMusicBackground" id="changeMusicBackground">
+        <span class="justify-div">
+          <label for="changeMusicBackground"> Música de fundo: </label>
+          <button type="button"> Teste</button></span>
+        <select title="Mudar som de fundo de foco" name="changeMusicBackground" id="changeMusicBackground">
           <option value='fire'>Brasas | Fogo</option>
           <option value='calm'>Suave Acústico</option>
           <option value='clockTick'>Tick de relógio</option>
           <option value='lofi'>Lofi</option>
           <option value='runningWater'>Água escorrendo</option>
           <option value='eletronic'>Eletrônica</option>
+        </select>
+        <span class="justify-div">
+          <label for="change_music_break">Fim de pausa: </label>
+          <button type="button"> Teste</button></span>
+        <select title="Mudar alarme de pausa" name="change_music_break" id="changeMusicBreak">
+          <option value='fire'>Brasas | Fogo</option>
+        </select>
+        <span class="justify-div">
+          <label for="change_music_focus">Fim de foco: </label>
+          <button type="button"> Teste</button></span>
+        <select title="Mudar alarme de pausa" name="change_music_focus" id="changeMusicFocus">
+          <option value='fire'>Brasas | Fogo</option>
         </select>
       </div>
       <div class="dropdown-menu" id="setClockMenu">
@@ -163,13 +178,53 @@
           <option value=2>Cronômetro</option>
           <option value=3>Temporizador</option>
         </select>
-        <label for="focus_session_time_range"> Tempo de sessão de foco: </label>
-        <input title="Intervalo" type="time" name="focus_session_time_range" id="focusSessionTimeRange" min="00:00:00" max="12:00:00" value="00:25:00" step="1">
-        <label for="break_session_time_range"> Tempo de sessão de pausa: </label>
-        <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00" max="12:00:00" value="00:05:00" step="1">
+        <span>
+          <input title="Auto avanço" type="checkbox" name="auto_foco" id="autoFoco">
+          <label for="auto_foco">Auto avanço do foco</label>
+        </span>
+        <span>
+          <input title="Auto avanço" type="checkbox" name="auto_break" id="autoBreak">
+          <label for="auto_break">Auto avanço das pausas</label>
+        </span>
+        <span>
+          <input title="Auto avanço" type="checkbox" name="auto_01" id="auto01">
+          <label for="auto_01">Sincronização com tempo real (auto desconto da sessão)</label>
+        </span>
+        <h4> Tempo de sessões</h4>
+        <span class="justify-div">
+          <label for="focus_session_time_range"> Foco: </label>
+          <input title="Intervalo" type="time" name="focus_session_time_range" id="focusSessionTimeRange" min="00:00:00"
+            max="12:00:00" value="00:25:00" step="1">
+        </span>
+        <span class="justify-div">
+          <label for="break_session_time_range"> Pausa curta: </label>
+          <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00"
+            max="12:00:00" value="00:05:00" step="1">
+        </span>
+        <span class="justify-div">
+          <label for="break_session_time_range"> Pausa longa: </label>
+          <input title="Pausa longa" type="time" name="long_break_session_time_range" id="longBreakSessionTimeRange"
+            min="00:00:00" max="12:00:00" value="00:15:00" step="1">
+        </span>
+        <span class="justify-div">
+          <label for="count_foco">Sessões de foco até uma pausa curta:</label>
+          <input title="Quantidade de foco" type="text" name="count_foco" id="countToShortBreak" value="1">
+        </span>
+        <span class="justify-div">
+          <label for="count_to_break_long">Sessões de foco até uma pausa longa: </label>
+          <input title="Quantidade de foco" type="text" name="count_to_break_long" id="countToLongBreak" value="4"
+            size="2px">
+        </span>
+        <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
+        <h4>Notificação do relógio</h4>
+        <label for="type_notification">Tipo de notificação</label>
+        <select name="type_notification" id="type_notification">
+          <option value="0">Sem notificação por fora</option>
+          <option value="1">Janela | Popup</option>
+          <option value="2">Alerta de notificação</option>
+        </select>
       </div>
       <div class="dropdown-menu" id="gameMenu">
-        <!-- <h4>Jogo</h4> -->
         <h4>Em breve mais funções</h4>
         <!-- <button type="button" title="Em breve mais funções" class="button-menu" disabled>Iniciar</button> -->
       </div>

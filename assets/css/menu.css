@@ -2,7 +2,7 @@
 #perfil_menu {
   position: absolute;
   z-index: 4;
-
+  min-width: 180px;
   
   /* display: flex; */
 
@@ -14,26 +14,28 @@
 
   word-wrap: break-word;
   flex-direction: column;
+  text-align: start;
+
+  a{
+    text-decoration: none;
+  }
 
   .button-menu,
   .button-close,
   select,
   label,
-  p {
-    margin-top: 5px;
-
-    appearance: none;
-    background-color: var(--header-color);
-    position: relative;
-
+  p{
     font-size: 14px;
-    letter-spacing: 0.04em;
-    color: var(--text-color);
   }
 
   .button-menu,
   .button-close,
   select {
+    appearance: none;
+    background-color: var(--header-color);
+    position: relative;
+    color: var(--text-color);
+    
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 1rem;
@@ -43,25 +45,25 @@
   }
 
   .button-menu,
+  select{
+    width: 100%;
+    padding: 10px;
+    border: solid var(--background-color);
+  }
+
+  .button-menu,
   select,
   label,
   p,
   h4 {
-    padding: 10px;
-    width: 100%;
-
+    letter-spacing: 0.04em;
     text-align: left;
   }
 
+
   label,
   p {
-    padding-top: 0px;
-    padding-bottom: 2px;
-  }
-
-  .button-menu,
-  select {
-    border: solid var(--background-color);
+    width: 90%;
   }
 
   .button-close {
@@ -70,6 +72,45 @@
     padding: 0px 8px 3px;
     border: none;
     font-size: 20px;
+  }
+
+  span{
+    width: 90%;
+    text-align: start;
+  }
+
+  span,
+  input,
+  .button-menu,
+  select,
+  h4{
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin-top: 15px;
+  }
+
+  span{
+    >p,
+    >.button-menu,
+    >input{
+      margin: 0px;
+    }
+
+    input[type="time"]{
+      width: 160px;
+    }
+      
+  }
+
+  label{
+    margin-bottom: 2px;
+  }
+
+  input[type="text"]{
+    width: 20px;
+    text-align: center;
   }
 }
 
@@ -81,6 +122,7 @@
 
 #perfil_menu,
 .menu-inner {
+  /* display: flex; */
   padding: 0px 10px 10px;
 }
 
@@ -91,11 +133,13 @@
   overflow: hidden;
 
   > div {
-    max-width: 240px;
+    max-width: 250px;
   }
 }
 
 .menu-inner {
+  margin-left: 5px;
+  margin-right: 5px;
   max-height: 60%;
   overflow: auto;
 }
@@ -110,6 +154,19 @@
     padding-bottom: 22px;
     border-bottom: 3px solid var(--border-color-gray);
   }
+  #gameMenu{
+    border: none;
+  }
+}
+
+.menu-base > input[type=checkbox] {
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
 }
 
 
@@ -130,4 +187,9 @@
   background-color: var(--header-color);
   border-radius: 20px;
   border: 3px solid var(--border-color-gray);
+}
+
+.justify-div{
+  display: flex;
+  justify-content: space-between;
 }

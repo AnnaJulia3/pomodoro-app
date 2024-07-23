@@ -19,10 +19,12 @@ var listDivMenu = document.getElementsByClassName("dropdown-menu");
 
 // --- Funções fechamento
 function closeTimerGeneralMenu() {
+  let menu = listMenuContainer.item(1);
+  menu.setAttribute("group", "no");
   [1, 2, 3].forEach((i) => {
     listDivMenu.item(i).style.display = "none";
   });
-  listMenuContainer.item(1).style.display = "none";
+  menu.style.display = "none";
   openMenuSession = -1;
   openMenuContainer = -1;
 }
@@ -65,6 +67,8 @@ function openMenuUngrouped(i) {
 
 buttonGear.addEventListener("click", () => {
   let previous = openMenuSession;
+  let menu = listMenuContainer.item(1);
+  menu.setAttribute("group", "yes");
   if (openMenuSession > -1) closeMenu();
   if (previous != 4) {
     [1, 2, 3].forEach((i) => {
