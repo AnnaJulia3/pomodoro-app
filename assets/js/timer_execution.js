@@ -32,6 +32,7 @@ function formatMinutes() {
 var selectTypeTimer = document.getElementById("type_timer");
 
 function changeTypeTimer() {
+  // console.log("Vira pomodoro - troca de timer");
   nowType = selectTypeTimer.value;
 
   if (nowType == TYPE_STOPWATCH) {
@@ -56,6 +57,19 @@ function changeTypeTimer() {
   timerNowInSeconds = initTimeInSeconds;
   endNowInSeconds = endTimeInSeconds;
   formatMinutes();
+}
+
+function changeTypeTimerToBreak() {
+  
+  nowType = TYPE_BREAK;
+  if (stepTimer < 0) {
+    initBreakInSeconds = breakTimeInSeconds;
+  } else {
+    endBreakInSeconds = breakTimeInSeconds;
+  }
+  timerNowInSeconds = initTimeInSeconds;  
+  // console.log("Vira break -> inicio: " +  initBreakInSeconds/60 + ' Até: ' + endBreakInSeconds/60);
+  // formatMinutes();
 }
 
 // --- Progressão do timer ---
@@ -83,41 +97,46 @@ function playTimer() {
   timerNowInSeconds += stepTimer;
 }
 
+function setStartTimer() {
+  audioStartPomodoro.currentTime = 0;
+  audioStartPomodoro.play();
+  buttonMusic.style.display = "none";
+  buttonTopGame.style.display = "none";
+  progress_clock_space.setAttribute("theme", "pomodoro");
+  if (!audioEndBreak.paused) {
+    audioEndBreak.pause();
+    audioEndBreak.currentTime = 0;
+  }
+  if (!audioSucessPomodoro.paused) {
+    audioSucessPomodoro.pause();
+    audioSucessPomodoro.currentTime = 0;
+  }
+
+  if (nowType == TYPE_BREAK) {
+    timerNowInSeconds = initBreakInSeconds;
+    endNowInSeconds = endBreakInSeconds;
+
+    nowType = TYPE_POMODORO;
+    buttonTopGame.style.display = "flex";
+    progress_clock_space.setAttribute("theme", "break");
+    not_show_count_pomodoro();
+  } else {
+    timerNowInSeconds = initTimeInSeconds;
+    progressBar();
+    if (nowType == TYPE_POMODORO) {
+      nowType = TYPE_BREAK;
+      endNowInSeconds = endTimeInSeconds;
+    }
+  }
+  timerProgress = setInterval(playTimer, 1000);
+  playTimer();
+}
+
 controlPlayTimer.addEventListener("click", () => {
   if (openMenuSession > -1) closeMenu();
   if (controlPlayTimer.checked) {
-    audioStartPomodoro.currentTime = 0;
-    audioStartPomodoro.play();
-    buttonMusic.style.display = "none";
-    buttonTopGame.style.display = "none";
-    progress_clock_space.setAttribute("theme", "pomodoro");
-    if (!audioEndBreak.paused) {
-      audioEndBreak.pause();
-      audioEndBreak.currentTime = 0;
-    }
-    if (!audioSucessPomodoro.paused) {
-      audioSucessPomodoro.pause();
-      audioSucessPomodoro.currentTime = 0;
-    }
-
-    if (nowType == TYPE_BREAK) {
-      timerNowInSeconds = initBreakInSeconds;
-      endNowInSeconds = endBreakInSeconds;
-
-      nowType = TYPE_POMODORO;
-      buttonTopGame.style.display = "flex";
-      progress_clock_space.setAttribute("theme", "break");
-      not_show_count_pomodoro();
-    } else {
-      timerNowInSeconds = initTimeInSeconds;
-      progressBar();
-      if (nowType == TYPE_POMODORO) {
-        nowType = TYPE_BREAK;
-        endNowInSeconds = endTimeInSeconds;
-      }
-    }
-    timerProgress = setInterval(playTimer, 1000);
-    playTimer();
+    removeSynchronize();
+    setStartTimer();
   } else {
     stopTimer();
     audioLosePomodoro.play();

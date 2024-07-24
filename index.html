@@ -147,7 +147,10 @@
         <h4>Sons</h4>
         <span class="justify-div">
           <label for="changeMusicBackground"> Música de fundo: </label>
-          <button type="button"> Teste</button></span>
+          <!-- TODO: Tocar música para usuário ouvir
+          <button type="button"> Teste</button>
+           -->
+        </span>
         <select title="Mudar som de fundo de foco" name="changeMusicBackground" id="changeMusicBackground">
           <option value='fire'>Brasas | Fogo</option>
           <option value='calm'>Suave Acústico</option>
@@ -156,18 +159,22 @@
           <option value='runningWater'>Água escorrendo</option>
           <option value='eletronic'>Eletrônica</option>
         </select>
+        <!-- TODO: Alarme pausa 
         <span class="justify-div">
           <label for="change_music_break">Fim de pausa: </label>
           <button type="button"> Teste</button></span>
         <select title="Mudar alarme de pausa" name="change_music_break" id="changeMusicBreak">
           <option value='fire'>Brasas | Fogo</option>
-        </select>
+        </select> 
+        -->
+        <!-- TODO: Alarme foco
         <span class="justify-div">
           <label for="change_music_focus">Fim de foco: </label>
           <button type="button"> Teste</button></span>
         <select title="Mudar alarme de pausa" name="change_music_focus" id="changeMusicFocus">
           <option value='fire'>Brasas | Fogo</option>
         </select>
+         -->
       </div>
       <div class="dropdown-menu" id="setClockMenu">
         <h4>Configurações do relógio</h4>
@@ -178,17 +185,33 @@
           <option value=2>Cronômetro</option>
           <option value=3>Temporizador</option>
         </select>
+        <!-- TODO: Auto avanço -->
+        <!--
         <span>
-          <input title="Auto avanço" type="checkbox" name="auto_foco" id="autoFoco">
-          <label for="auto_foco">Auto avanço do foco</label>
+          <input title="Auto avanço de inicio de foco" type="checkbox" name="auto_foco" id="autoFoco">
+          <label for="auto_foco">Auto avanço de foco</label>
+          <button
+            title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
+            type="button">?</button>
         </span>
+         -->
+        <!-- TODO: Auto avanço -->
+        <!-- 
         <span>
-          <input title="Auto avanço" type="checkbox" name="auto_break" id="autoBreak">
-          <label for="auto_break">Auto avanço das pausas</label>
+          <input title="Auto avanço de inicio de pausa" type="checkbox" name="auto_break" id="autoBreak">
+          <label for="auto_break">Auto avanço de pausas</label>
+          <button
+            title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
+            type="button">?</button>
         </span>
+         -->
         <span>
-          <input title="Auto avanço" type="checkbox" name="auto_01" id="auto01">
+          <input title="Sincronização com o relógio na internet" type="checkbox" name="synchronize_internet_clock"
+            id="synchronizeInternetClock">
           <label for="auto_01">Sincronização com tempo real (auto desconto da sessão)</label>
+          <button
+            title="A partir do relógio do seu computador, calcula a sessões como se uma das sessões de foco comesse exatamente na próxima hora"
+            type="button">?</button>
         </span>
         <h4> Tempo de sessões</h4>
         <span class="justify-div">
@@ -201,32 +224,43 @@
           <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00"
             max="12:00:00" value="00:05:00" step="1">
         </span>
+        <!-- TODO: Criar pausa longa -->
+        <!-- 
         <span class="justify-div">
           <label for="break_session_time_range"> Pausa longa: </label>
           <input title="Pausa longa" type="time" name="long_break_session_time_range" id="longBreakSessionTimeRange"
             min="00:00:00" max="12:00:00" value="00:15:00" step="1">
         </span>
+         -->
+        <!-- TODO: Criar alternância a partir do play automático -->
+        <!-- 
         <span class="justify-div">
           <label for="count_foco">Sessões de foco até uma pausa curta:</label>
           <input title="Quantidade de foco" type="text" name="count_foco" id="countToShortBreak" value="1">
         </span>
         <span class="justify-div">
-          <label for="count_to_break_long">Sessões de foco até uma pausa longa: </label>
+          <label for="count_to_break_long">Pausas curtas até virar uma pausa longa: </label>
           <input title="Quantidade de foco" type="text" name="count_to_break_long" id="countToLongBreak" value="4"
             size="2px">
         </span>
+         -->
         <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
         <h4>Notificação do relógio</h4>
         <label for="type_notification">Tipo de notificação</label>
-        <select name="type_notification" id="type_notification">
+        <select title="Tipo de notificação" name="type_notification" id="typeNotification">
           <option value="0">Sem notificação por fora</option>
-          <option value="1">Janela | Popup</option>
+          <!-- TODO: Criar notificações por meio do navegador -->
+          <!-- 
+          <option value="1">Nova Janela | Popup</option>
           <option value="2">Alerta de notificação</option>
+           -->
         </select>
       </div>
       <div class="dropdown-menu" id="gameMenu">
         <h4>Em breve mais funções</h4>
-        <!-- <button type="button" title="Em breve mais funções" class="button-menu" disabled>Iniciar</button> -->
+        <!-- 
+        <button type="button" title="Em breve mais funções" class="button-menu">Iniciar</button> 
+        -->
       </div>
     </div>
   </menu>
