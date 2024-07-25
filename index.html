@@ -205,14 +205,9 @@
             type="button">?</button>
         </span>
          -->
-        <span>
-          <input title="Sincronização com o relógio na internet" type="checkbox" name="synchronize_internet_clock"
-            id="synchronizeInternetClock">
-          <label for="auto_01">Sincronização com tempo real (auto desconto da sessão)</label>
-          <button
-            title="A partir do relógio do seu computador, calcula a sessões como se uma das sessões de foco comesse exatamente na próxima hora"
-            type="button">?</button>
-        </span>
+        <button
+          title="A partir do relógio do seu computador, calcula a sessões como se uma das sessões de foco comesse exatamente na próxima hora"
+          type="button" class="button-menu" id="buttonSynchronizeClock">Sincronização com a próxima hora</button>
         <h4> Tempo de sessões</h4>
         <span class="justify-div">
           <label for="focus_session_time_range"> Foco: </label>
@@ -232,18 +227,19 @@
             min="00:00:00" max="12:00:00" value="00:15:00" step="1">
         </span>
          -->
-        <!-- TODO: Criar alternância a partir do play automático -->
-        <!-- 
+        <!-- TODO: Criar alternância de foco até pausa curta -->
         <span class="justify-div">
           <label for="count_foco">Sessões de foco até uma pausa curta:</label>
           <input title="Quantidade de foco" type="text" name="count_foco" id="countToShortBreak" value="1">
         </span>
+        <!-- TODO: Criar alternância de foco até pausa longa -->
+        <!--          
         <span class="justify-div">
           <label for="count_to_break_long">Pausas curtas até virar uma pausa longa: </label>
           <input title="Quantidade de foco" type="text" name="count_to_break_long" id="countToLongBreak" value="4"
             size="2px">
-        </span>
-         -->
+        </span> -->
+
         <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
         <h4>Notificação do relógio</h4>
         <label for="type_notification">Tipo de notificação</label>

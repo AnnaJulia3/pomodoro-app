@@ -1,16 +1,14 @@
-var countFocusToNormal = 0;
 // --- Alterar tempo das sessões ---
 var focusSessionTimeRange = document.getElementById("focusSessionTimeRange");
 var breakSessionTimeRange = document.getElementById("breakSessionTimeRange");
+var countFocusToNormal = 0;
+var buttonSynchronizeClock = document.getElementById("buttonSynchronizeClock");
 // --- Auto avanço ---
 var autoFoco = document.getElementById("autoFoco");
 var autoBreak = document.getElementById("autoBreak");
-var checkSynchronizedInternetClock = document.getElementById(
-  "synchronizeInternetClock"
-);
 // --- Personalização de quantidade de sessões ---
 var countToShortBreak = document.getElementById("countToShortBreak");
-var countToLongBreak = document.getElementById("countToLongBreak");
+// var countToLongBreak = document.getElementById("countToLongBreak");
 // --- Personalização de notificação ---
 var typeNotification = document.getElementById("typeNotification");
 // --- --- ---
@@ -51,7 +49,7 @@ function changeBreakTimeRange() {
 focusSessionTimeRange.addEventListener("change", changeFocusTimeRange);
 breakSessionTimeRange.addEventListener("change", changeBreakTimeRange);
 
-// --- Auto avanço ---
+// --- Sincronizações ---
 function removeSynchronize() {
   // play
   // console.log("Contagem até foco na hora redonda " + countFocusToNormal);
@@ -91,89 +89,81 @@ function synchronizeInternetClock() {
   let primeiroPomodoroASerSeguido;
   let quantasPode;
   let umaSessão;
+  let countFocus = countToShortBreak.value;
 
   // --- auxiliar
   let mensagem;
   // breakTimeInSeconds
   // pomodoroTimeInSeconds
 
-  if (checkSynchronizedInternetClock.checked) {
-    status = confirm(
-      "Realmente deseja sincronizar com o relógio na internet? O timer será ajustado para que uma das sessão de foco comece às " +
-        hour +
-        "h"
-    );
-    if (!status) {
-      checkSynchronizedInternetClock.checked = false;
-      return;
-    }
-    // countFocusToNormal = 2;
-    // ---
-    // Atualiza qualquer informação que possa estar desatualizada
-    resetTimeRange();
-    // ---
-    minutesNow = "00:" + dateNow.getMinutes() + ":" + dateNow.getSeconds();
-    if (teste1) minutesNow = "00:58:00";
-    segundosAteAProxHora = 3600 - convertFormattedTimeToSeconds(minutesNow);
-    umaSessão =
-      pomodoroTimeInSeconds * countToShortBreak.value + breakTimeInSeconds;
-    quantasPode = segundosAteAProxHora / umaSessão;
-    segundosNaoEncaixamFocoBreak = segundosAteAProxHora % umaSessão;
-
-    if (quantasPode < 1) {
-      mensagem = "Quebra algo \n";
-    } else {
-      mensagem = "Vai ter sessões de foco e break " + quantasPode + "\n";
-    }
-
-    if (segundosNaoEncaixamFocoBreak > breakTimeInSeconds) {
-      // ---> foco
-      primeiroPomodoroASerSeguido =
-        segundosNaoEncaixamFocoBreak - breakTimeInSeconds;
-      mensagem += "foco de " + primeiroPomodoroASerSeguido / 60;
-      pomodoroTimeInSeconds = primeiroPomodoroASerSeguido;
-      countFocusToNormal = 1;
-
-      changeTypeTimer();
-    } else {
-      // restante <= break --->  break
-      mensagem += "break de " + segundosNaoEncaixamFocoBreak / 60;
-      breakTimeInSeconds = segundosNaoEncaixamFocoBreak;
-      changeTypeTimerToBreak();
-      countFocusToNormal = 0;
-    }
-
-    // pelo restante sei o restante real que não encaixa no que o próprio algoritmo vai cuidar
-    // restante <= break --->  break
-    // restante > break ---> foco
-
-    // Olho a partir da pausa curta
-    // Casos
-    // restante <= break ---> break
-    // Se o tempo restante é curto demais para 1 foco e 1 break -> faz um break curto com o tempo restante
-    // break < restante < foco + break  ---> foco
-    // Se o tempo restante sobra para 1 foco e 1 break -> faz um foco e break curto com o tempo restante
-    // foco + break < restante <= break + foco + break  ---> break
-    // break + foco + break < restante <= break + foco + break + foco ---> foco
-
-    // restante % (foco + break) = rest
-
-    /* console.log(
-      minutesNow +
-        "\n" +
-        "Tempo timer " +
-        pomodoroTimeInSeconds / 60 +
-        " Tempo atual " +
-        segundosAteAProxHora / 60 +
-        "\n" +
-        "\n" +
-        mensagem
-    );
-    */
+  status = confirm(
+    "Realmente deseja sincronizar com o relógio na internet? O timer será ajustado para que uma das sessão de foco comece às " +
+      hour +
+      "h"
+  );
+  if (!status) {
+    checkboxSynchronizeClock.checked = false;
+    return;
   }
-}
+  // ---
+  // Atualiza qualquer informação que possa estar desatualizada
+  resetTimeRange();
+  // ---
+  minutesNow = "00:" + dateNow.getMinutes() + ":" + dateNow.getSeconds();
+  if (teste1) minutesNow = "00:58:00";
+  segundosAteAProxHora = 3600 - convertFormattedTimeToSeconds(minutesNow);
+  umaSessão = pomodoroTimeInSeconds * countFocus + breakTimeInSeconds;
+  quantasPode = segundosAteAProxHora / umaSessão;
+  segundosNaoEncaixamFocoBreak = segundosAteAProxHora % umaSessão;
 
-checkSynchronizedInternetClock.addEventListener(
-  "change",
-  synchronizeInternetClock
-);
+  if (quantasPode < 1) {
+    mensagem = "Quebra algo \n";
+  } else {
+    mensagem = "Vai ter sessões de foco e break " + quantasPode + "\n";
+  }
+
+  if (segundosNaoEncaixamFocoBreak > breakTimeInSeconds) {
+    // ---> foco
+    primeiroPomodoroASerSeguido =
+      segundosNaoEncaixamFocoBreak - breakTimeInSeconds;
+    mensagem += "foco de " + primeiroPomodoroASerSeguido / 60;
+    pomodoroTimeInSeconds = primeiroPomodoroASerSeguido;
+    countFocusToNormal = 1;
+
+    changeTypeTimer();
+  } else {
+    // restante <= break --->  break
+    mensagem += "break de " + segundosNaoEncaixamFocoBreak / 60;
+    breakTimeInSeconds = segundosNaoEncaixamFocoBreak;
+    changeTypeTimerToBreak();
+    countFocusToNormal = 0;
+  }
+
+  // pelo restante sei o restante real que não encaixa no que o próprio algoritmo vai cuidar
+  // restante <= break --->  break
+  // restante > break ---> foco
+
+  // Olho a partir da pausa curta
+  // Casos
+  // restante <= break ---> break
+  // Se o tempo restante é curto demais para 1 foco e 1 break -> faz um break curto com o tempo restante
+  // break < restante < foco + break  ---> foco
+  // Se o tempo restante sobra para 1 foco e 1 break -> faz um foco e break curto com o tempo restante
+  // foco + break < restante <= break + foco + break  ---> break
+  // break + foco + break < restante <= break + foco + break + foco ---> foco
+
+  // restante % (foco + break) = rest
+
+  // console.log(
+  //   minutesNow +
+  //     "\n" +
+  //     "Tempo timer " +
+  //     pomodoroTimeInSeconds / 60 +
+  //     " Tempo atual " +
+  //     segundosAteAProxHora / 60 +
+  //     "\n" +
+  //     "\n" +
+  //     mensagem
+  // );
+}
+buttonSynchronizeClock.addEventListener("click", synchronizeInternetClock);
