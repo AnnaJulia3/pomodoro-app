@@ -79,10 +79,10 @@
 
   <footer>
     <p>
-      @ 2024. 
+      @ 2024.
       <a href="https://github.com/AnnaJulia3/pomodoro-app" target="_blank" rel='noopener noreferrer'>
         Projeto de estudos pessoais
-      </a>. Em desenvolvimento por 
+      </a>. Em desenvolvimento por
       <a href="https://github.com/AnnaJulia3" target="_blank" rel='noopener noreferrer'>
         AJ
       </a>
@@ -102,7 +102,28 @@
 
       <!-- Menu volume -->
       <div class="dropdown-menu" id="musicMenu">
-        
+        <audio loop preload="auto"
+          src="./assets/music/background/0_default_sound-of-a-fantastic-warm-fireplace-141728.mp3" id="fireAudio">
+          Seu navegador não possui suporte ao elemento audio
+        </audio>
+        // --- inicio
+        <audio loop preload="none" src="./assets/music/background/calm_game_music_1-49209.mp3" id="calmAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/clock-tick-76039.mp3" id="clockTickAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/lo-fi-chill-medium-version-159456.mp3"
+          id="loFiChillAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/the-old-water-mill-meditation-8005.mp3"
+          id="runningWaterAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/titanium-170190.mp3" id="electronicAudio"></audio>
+        // -- fim playlist
+        <audio preload="auto" src="./assets/music/init_pomodoro/default-decide.mp3" id="audioStartPomodoro"></audio>
+        <audio preload="auto" src="./assets/music/lose_pomodoro/game-over-arcade-6435.mp3"
+          id="audioLosePomodoro"></audio>
+        <audio loop preload="auto" src="./assets/music/success_pomodoro/success-1-6297.mp3"
+          id="audioSuccessPomodoro"></audio>
+        <audio loop preload="auto" src="./assets/music/end_break/alert-sound-loop-189741.mp3"
+          id="audioEndBreak"></audio>
+
+
         <h4>Volume</h4>
         <label for="audioVolumeGlobal">
           Global:
@@ -134,9 +155,9 @@
           <option value='fire'>Brasas | Fogo</option>
           <option value='calm'>Suave Acústico</option>
           <option value='clockTick'>Tick de relógio</option>
-          <option value='lofi'>Lofi</option>
+          <option value='loFiChill'>Lo-fi Tranquila</option>
           <option value='runningWater'>Água escorrendo</option>
-          <option value='eletronic'>Eletrônica</option>
+          <option value='electronic'>Eletrônica</option>
         </select>
         <!-- TODO: Alarme pausa 
         <span class="justify-div">
@@ -189,12 +210,12 @@
           type="button" class="button-menu" id="buttonSynchronizeClock">Sincronização com a próxima hora</button>
         <h4> Tempo de sessões</h4>
         <span class="justify-div">
-          <label for="focus_session_time_range"> Foco: </label>
+          <label for="focusSessionTimeRange"> Foco: </label>
           <input title="Intervalo" type="time" name="focus_session_time_range" id="focusSessionTimeRange" min="00:00:00"
             max="12:00:00" value="00:25:00" step="1">
         </span>
         <span class="justify-div">
-          <label for="break_session_time_range"> Pausa curta: </label>
+          <label for="breakSessionTimeRange"> Pausa curta: </label>
           <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00"
             max="12:00:00" value="00:05:00" step="1">
         </span>
@@ -208,7 +229,7 @@
          -->
         <!-- TODO: Criar alternância de foco até pausa curta -->
         <span class="justify-div">
-          <label for="count_foco">Sessões de foco até uma pausa curta:</label>
+          <label for="countToShortBreak">Sessões de foco até uma pausa curta:</label>
           <input title="Quantidade de foco" type="text" name="count_foco" id="countToShortBreak" value="1">
         </span>
         <!-- TODO: Criar alternância de foco até pausa longa -->
@@ -221,7 +242,7 @@
 
         <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
         <h4>Notificação do relógio</h4>
-        <label for="type_notification">Tipo de notificação</label>
+        <label for="typeNotification">Tipo de notificação</label>
         <select title="Tipo de notificação" name="type_notification" id="typeNotification">
           <option value="0">Sem notificação por fora</option>
           <!-- TODO: Criar notificações por meio do navegador -->
