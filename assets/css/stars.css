@@ -25,83 +25,83 @@
 }
 
 /* --- Estrelas acima ---*/
-#micro_star_above1 {
+#microStarAbove1 {
   top: 2%;
   left: 25%;
 }
 
-#micro_star_above2 {
+#microStarAbove2 {
   top: 4%;
   left: 20%;
 }
 
-#micro_star_above3 {
+#microStarAbove3 {
   top: 8%;
   left: 17%;
 }
 
-#small_star_above1 {
+#smallStarAbove1 {
   top: 8%;
   left: 20%;
 }
 
-#middle_star_above1 {
+#middleStarAbove1 {
   top: 10%;
   left: 12%;
 }
 
-#small_star_above2 {
+#smallStarAbove2 {
   top: 20%;
   left: 8%;
 }
 
-#big_star_above {
+#bigStarAbove {
   top: 20%;
   left: 13%;
 }
 
-#middle_star_above2 {
+#middleStarAbove2 {
   top: 28%;
   left: 4%;
 }
 
 /* --- Estrelas abaixo --- */
-#small_star_below {
+#smallStarBelow {
   bottom: 32%;
   right: 16%;
 }
 
-#middle_star_below {
+#middleStarBelow {
   bottom: 27%;
   right: 6%;
 }
 
-#big_star_below {
+#bigStarBelow {
   bottom: 12%;
   right: 10%;
 }
 
-#micro_star_below1 {
+#microStarBelow1 {
   bottom: 27%;
   right: 20%;
 }
 
-#micro_star_below2 {
+#microStarBelow2 {
   bottom: 15%;
   right: 21%;
 }
 
-#micro_star_below3 {
+#microStarBelow3 {
   bottom: 6%;
   right: 18%;
 }
 
-#micro_star_below4 {
+#microStarBelow4 {
   bottom: 8%;
   right: 24%;
 }
 
-#micro_star_below5 {
+#microStarBelow5 {
   bottom: 3%;
   right: 28%;
 }

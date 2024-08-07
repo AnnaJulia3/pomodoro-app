@@ -66,27 +66,27 @@ echo "<script>var dataUser = $json;</script>";
     </button>
   </header>
 
-  <div id="conteiner_clock">
+  <div id="container_clock">
     <button type="button" class="topGame" id="buttonGameTop">
       <img src="./assets/images/dog-and-cup-dark.png" alt="cup and dog">
     </button>
-    <div class="progress_clock_space" theme="pomodoro" id="progress_clock_space">
+    <div class="progress_clock_space" theme="pomodoro" id="progressClockSpace">
       <div class="cub" id="cub2"></div>
       <div class="cub" id="cub1"></div>
       <div class="cub" id="cub4"></div>
-      <div class="conteiners_cub" id="conteiner_cub5">
+      <div class="containers_cub" id="containerCub5">
         <div class="cub" id="cub5"></div>
       </div>
-      <div class="conteiners_cub" id="conteiner_cub3">
+      <div class="containers_cub" id="containerCub3">
         <div class="cub" id="cub3"></div>
       </div>
       <div class="clock_space" id="clock_space">
         <h1 id="timerText">25:00</h1>
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above1">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove1">
 
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above2">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove2">
 
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above3">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove3">
 
         <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_above1">
 
@@ -212,16 +212,16 @@ echo "<script>var dataUser = $json;</script>";
           <option value='fire'>Brasas | Fogo</option>
           <option value='calm'>Suave Acústico</option>
           <option value='clockTick'>Tick de relógio</option>
-          <option value='lofi'>Lofi</option>
+          <option value='loFiChill'>Lo-fi Tranquila</option>
           <option value='runningWater'>Água escorrendo</option>
-          <option value='eletronic'>Eletrônica</option>
+          <option value='electronic'>Eletrônica</option>
         </select>
       </div>
       <!-- Menu tipo de relógio -->
       <div class="dropdown-menu" id="setClockMenu">
         <h4>Configurações do relógio</h4>
-        <label for="type_timer"> Tipo de timer: </label>
-        <select name="Tipo de time:" id="type_timer" onchange="changeTypeTimer()">
+        <label for="typeTimer"> Tipo de timer: </label>
+        <select name="Tipo de time:" id="typeTimer" onchange="changeTypeTimer()">
           <option value=0>Pomodoro clássico</option>
           <option value=1>Pomodoro crescente</option>
           <option value=2>Cronômetro</option>

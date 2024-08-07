@@ -1,4 +1,4 @@
-// --- Animation Bar ---
+// --- Animação em 1 minuto ---
 var bar1 = document.getElementById("cub1");
 var bar2 = document.getElementById("cub2");
 var bar3 = document.getElementById("cub3");
@@ -38,40 +38,40 @@ function stopProgressBar() {
 
 // --- Intermediário ---
 function progressBar() {
-  //pomodoro ativo
+  //Animação ativa
   // loopAnimationTimerBar = setInterval(animation_bars, 60000);
   // animation_bars();
-  //--- star ---
+  //--- Contagem ativa ---
   show_count_pomodoro();
 }
 
-// --- Count stars ---
+// --- Contagem de sessões de foco ---
 var count_pomodoro = 0;
 var listStars = [
-  document.getElementById("micro_star_above3"),
-  document.getElementById("micro_star_above2"),
-  document.getElementById("micro_star_above1"),
+  document.getElementById("microStarAbove3"),
+  document.getElementById("microStarAbove2"),
+  document.getElementById("microStarAbove1"),
 
-  document.getElementById("micro_star_below2"),
-  document.getElementById("micro_star_below3"),
-  document.getElementById("micro_star_below4"),
-  document.getElementById("micro_star_below5"),
+  document.getElementById("microStarBelow2"),
+  document.getElementById("microStarBelow3"),
+  document.getElementById("microStarBelow4"),
+  document.getElementById("microStarBelow5"),
 
-  document.getElementById("small_star_above1"),
-  document.getElementById("middle_star_above1"),
-  document.getElementById("big_star_below"),
-  document.getElementById("middle_star_below"),
-  document.getElementById("small_star_below"),
-  document.getElementById("small_star_above2"),
-  document.getElementById("middle_star_above2"),
+  document.getElementById("smallStarAbove1"),
+  document.getElementById("middleStarAbove1"),
+  document.getElementById("bigStarBelow"),
+  document.getElementById("middleStarBelow"),
+  document.getElementById("smallStarBelow"),
+  document.getElementById("smallStarAbove2"),
+  document.getElementById("middleStarAbove2"),
 
-  document.getElementById("micro_star_below1"),
+  document.getElementById("microStarBelow1"),
 
-  document.getElementById("big_star_above"),
+  document.getElementById("bigStarAbove"),
 ];
 
 function add_count_pomodoro() {
-  // sucess
+  // Sessão terminada com sucesso 
   if (count_pomodoro < 16) {
     listStars[count_pomodoro].style.display = "flex";
     count_pomodoro++;

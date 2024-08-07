@@ -21,44 +21,44 @@
     </button>
   </header>
 
-  <div id="conteiner_clock">
+  <div id="containerClock">
     <button type="button" class="topGame" id="buttonGameTop">
       <img src="./assets/images/dog-and-cup-dark.png" alt="cup and dog">
     </button>
-    <div class="progress_clock_space" theme="pomodoro" id="progress_clock_space">
+    <div class="progress_clock_space" theme="pomodoro" id="progressClockSpace">
       <div class="cub" id="cub2"></div>
       <div class="cub" id="cub1"></div>
       <div class="cub" id="cub4"></div>
-      <div class="conteiners_cub" id="conteiner_cub5">
+      <div class="containers_cub" id="containerCub5">
         <div class="cub" id="cub5"></div>
       </div>
-      <div class="conteiners_cub" id="conteiner_cub3">
+      <div class="containers_cub" id="containerCub3">
         <div class="cub" id="cub3"></div>
       </div>
-      <div class="clock_space" id="clock_space">
+      <div class="clock_space" id="clockSpace">
         <h1 id="timerText">25:00</h1>
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above1">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above2">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_above3">
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_above1">
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_above1">
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_above2">
-        <img src="./assets/images/star.svg" alt="star" class="big_star" id="big_star_above">
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_above2">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove2">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove3">
+        <img src="./assets/images/star.svg" alt="star" class="small_star" id="smallStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middleStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="small_star" id="smallStarAbove2">
+        <img src="./assets/images/star.svg" alt="star" class="big_star" id="bigStarAbove">
+        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middleStarAbove2">
         <!-- below -->
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_below">
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_below">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below1">
-        <img src="./assets/images/star.svg" alt="star" class="big_star" id="big_star_below">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below2">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below3">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below4">
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below5">
+        <img src="./assets/images/star.svg" alt="star" class="small_star" id="smallStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middleStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarBelow1">
+        <img src="./assets/images/star.svg" alt="star" class="big_star" id="bigStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarBelow2">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarBelow3">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarBelow4">
+        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarBelow5">
       </div>
     </div>
     <div class="count_stars">
       <p class="break_text">0</p>
-      <img src="./assets/images/star.svg" alt="star" id="star_to_count_star">
+      <img src="./assets/images/star.svg" alt="star" id="starToCountStars">
     </div>
   </div>
 
@@ -89,14 +89,14 @@
     </p>
   </footer>
 
-  <menu class="dropdown-menu" id="perfil_menu">
+  <menu class="dropdown-menu" id="perfilMenu">
     <button type="button" title="Fechar" id="closePerfilMenu" class="button-close">x</button>
     <!-- <h4>Sessão não iniciada</h4> -->
     <a href="./pages/page_login/index.html" class="button-menu">Login</a>
     <a href="./pages/register/index.html" class="button-menu">Cadastrar</a>
   </menu>
 
-  <menu class="menu-base" id="group_session_menu" group="no">
+  <menu class="menu-base" id="groupSessionMenu" group="no">
     <div class="menu-inner">
       <button type="button" title="Fechar" id="close" class="button-close">x</button>
 
@@ -178,8 +178,8 @@
       </div>
       <div class="dropdown-menu" id="setClockMenu">
         <h4>Configurações do relógio</h4>
-        <label for="type_timer"> Tipo de timer: </label>
-        <select name="Tipo de time:" id="type_timer" onchange="changeTypeTimer()">
+        <label for="typeTimer"> Tipo de timer: </label>
+        <select name="Tipo de time:" id="typeTimer" onchange="changeTypeTimer()">
           <option value=0>Pomodoro clássico</option>
           <option value=1>Pomodoro crescente</option>
           <option value=2>Cronômetro</option>

@@ -8,8 +8,8 @@
 .progress_clock_space[theme="pomodoro"] {
   background-color: var(--border-color-gray);
 
-  #conteiner_cub3,
-  #conteiner_cub5 {
+  #containerCub3,
+  #containerCub5 {
     display: flex;
   }
 }
@@ -17,13 +17,13 @@
 .progress_clock_space[theme="break"] {
   background-color: var(--border-color-blue);
 
-  #conteiner_cub3,
-  #conteiner_cub5 {
+  #containerCub3,
+  #containerCub5 {
     display: none;
   }
 }
 
-.conteiners_cub,
+.containers_cub,
 .cub {
   position: absolute;
 }
@@ -34,7 +34,7 @@
   background-color: var(--border-color-blue);
 }
 
-.conteiners_cub {
+.containers_cub {
   height: 10%;
   background-color: var(--border-color-gray);
 }
@@ -58,10 +58,10 @@
     var(--border-color-gray) 50%,
     var(--border-color-gray) 100%
   );
-  animation: animation-routate 15s linear both;
+  animation: animation-rotate 15s linear both;
 }
 
-#conteiner_cub3 {
+#containerCub3 {
   top: 90%;
   right: 30%;
   width: 40%;
@@ -86,10 +86,10 @@
     var(--border-color-blue) 50%,
     var(--border-color-blue) 100%
   );
-  animation: animation-routate 15s linear both;
+  animation: animation-rotate 15s linear both;
 }
 
-#conteiner_cub5 {
+#containerCub5 {
   top: 0%;
   left: 30%;
   width: 21%;
@@ -114,7 +114,7 @@
   }
 }
 
-@keyframes animation-routate {
+@keyframes animation-rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -145,12 +145,12 @@
     width: 240px;
   }
 
-  #conteiner_cub3 {
+  #containerCub3 {
     right: 25%;
     width: 50%;
   }
 
-  #conteiner_cub5 {
+  #containerCub5 {
     left: 25%;
     width: 25%;
   }
