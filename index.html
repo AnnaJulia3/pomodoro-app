@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timer Pomodoro</title>
+  <title>Pomodoro Timer</title>
   <meta name="description"
     content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil. Atinja suas metas com mais tranquilidade. Opções de relógio e cronômetro ajustável para sessões de foco e pausas. Use para estudar, trabalhar e realizar as tarefas que desejar!">
 
@@ -15,7 +15,7 @@
 
 <body>
   <header class="header_nav">
-    <input type="checkbox" id="toggleTheme" title="toggleTheme">
+    <input type="checkbox" id="toggleTheme" title="Modo claro/escuro">
     <button type="button" class="allButtons" id="buttonPerfil">
       <img src="./assets/images/button-person-circle.svg" alt="perfil" id="perfil">
     </button>
@@ -66,7 +66,7 @@
     <button type="button" class="allButtons" id="buttonMusic">
       <img src="./assets/images/button-music.svg" alt="buttonMusic">
     </button>
-    <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" title="controlPlayTimer">
+    <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" title="Iniciar sessão">
     <button type="button" class="allButtons" id="setClock" title="Temporizador">
     </button>
     <button type="button" class="allButtons" id="buttonGear">
@@ -106,7 +106,7 @@
           src="./assets/music/background/0_default_sound-of-a-fantastic-warm-fireplace-141728.mp3" id="fireAudio">
           Seu navegador não possui suporte ao elemento audio
         </audio>
-        // --- inicio
+        <!-- // --- inicio -->
         <audio loop preload="none" src="./assets/music/background/calm_game_music_1-49209.mp3" id="calmAudio"></audio>
         <audio loop preload="none" src="./assets/music/background/clock-tick-76039.mp3" id="clockTickAudio"></audio>
         <audio loop preload="none" src="./assets/music/background/lo-fi-chill-medium-version-159456.mp3"
@@ -114,7 +114,7 @@
         <audio loop preload="none" src="./assets/music/background/the-old-water-mill-meditation-8005.mp3"
           id="runningWaterAudio"></audio>
         <audio loop preload="none" src="./assets/music/background/titanium-170190.mp3" id="electronicAudio"></audio>
-        // -- fim playlist
+        <!-- // -- fim playlist -->
         <audio preload="auto" src="./assets/music/init_pomodoro/default-decide.mp3" id="audioStartPomodoro"></audio>
         <audio preload="auto" src="./assets/music/lose_pomodoro/game-over-arcade-6435.mp3"
           id="audioLosePomodoro"></audio>
@@ -131,7 +131,7 @@
         <input type="range" id="audioVolumeGlobal" name="volumeGlobal" min="0" max="100" step="1">
 
         <label for="audioVolumeAlarm">
-          Alarme (fim de sessão):
+          Alarmes (fim de sessão):
         </label>
         <input type="range" id="audioVolumeAlarm" name="volumeAlarm" min="0" max="100" step="1">
 
@@ -206,7 +206,7 @@
         </span>
          -->
         <button
-          title="A partir do relógio do seu computador, calcula a sessões como se uma das sessões de foco comesse exatamente na próxima hora"
+          title="A partir do relógio do seu computador, calcula a sessões para que uma das sessões de foco comesse exatamente na próxima hora"
           type="button" class="button-menu" id="buttonSynchronizeClock">Sincronização com a próxima hora</button>
         <h4> Tempo de sessões</h4>
         <span class="justify-div">
