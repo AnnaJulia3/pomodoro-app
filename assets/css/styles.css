@@ -98,7 +98,7 @@ header {
   align-items: center;
 }
 
-.clock_space {
+.clock-space {
   position: relative;
   background-color: var(--header-color);
   width: auto;
@@ -123,8 +123,8 @@ h1 {
 }
 
 /* --- Botoes --- */
-.allButtons,
-.topGame,
+.circula-buttons,
+#buttonGameTop,
 #toggleTheme {
   background: none;
   appearance: none;
@@ -138,8 +138,8 @@ h1 {
   }
 }
 
-.allButtons,
-.topGame {
+.circula-buttons,
+#buttonGameTop {
   width: 40px;
   height: 40px;
 
@@ -162,8 +162,8 @@ h1 {
   }
 }
 
-.topGame {
-  z-index: 2;
+#buttonGameTop {
+  z-index: 3;
   position: relative;
   width: auto;
   top: -50px;
@@ -248,7 +248,7 @@ a {
     padding: 50px 90px;
   }
 
-  .topGame {
+  #buttonGameTop {
     height: 52px;
 
     > img {

@@ -1,11 +1,11 @@
-.progress_clock_space {
+.progress-clock-space {
   position: fixed;
   top: 28%;
   width: auto;
   border-radius: 150px;
 }
 
-.progress_clock_space[theme="pomodoro"] {
+.progress-clock-space[theme="pomodoro"] {
   background-color: var(--border-color-gray);
 
   #containerCub3,
@@ -14,7 +14,7 @@
   }
 }
 
-.progress_clock_space[theme="break"] {
+.progress-clock-space[theme="break"] {
   background-color: var(--border-color-blue);
 
   #containerCub3,
@@ -23,7 +23,7 @@
   }
 }
 
-.containers_cub,
+.containers-cub,
 .cub {
   position: absolute;
 }
@@ -34,7 +34,7 @@
   background-color: var(--border-color-blue);
 }
 
-.containers_cub {
+.containers-cub {
   height: 10%;
   background-color: var(--border-color-gray);
 }
