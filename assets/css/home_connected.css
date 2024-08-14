@@ -1,10 +1,10 @@
 .disconnected{
   display: none; 
-  /* display: flex; */
-} 
+  display: flex;
+}  
 
 #perfilMenu{
-  display: flex;
+  /* display: flex; */
   width: 280px;
 }
 

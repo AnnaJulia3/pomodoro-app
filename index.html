@@ -99,7 +99,6 @@
   <menu class="menu-base" id="groupSessionMenu" group="no">
     <div class="menu-inner">
       <button type="button" title="Fechar" id="close" class="button-close">x</button>
-
       <!-- Menu volume -->
       <div class="dropdown-menu" id="musicMenu">
         <audio loop preload="auto"
@@ -122,24 +121,19 @@
           id="audioSuccessPomodoro"></audio>
         <audio loop preload="auto" src="./assets/music/end_break/alert-sound-loop-189741.mp3"
           id="audioEndBreak"></audio>
-
-
         <h4>Volume</h4>
         <label for="audioVolumeGlobal">
           Global:
         </label>
         <input type="range" id="audioVolumeGlobal" name="volumeGlobal" min="0" max="100" step="1">
-
         <label for="audioVolumeAlarm">
           Alarmes (fim de sessão):
         </label>
         <input type="range" id="audioVolumeAlarm" name="volumeAlarm" min="0" max="100" step="1">
-
         <label for="audioVolumeBackground">
           Música de fundo:
         </label>
         <input type="range" id="audioVolumeBackground" name="volumeBackground" min="0" max="100" step="1">
-
         <label for="audioVolumeInteraction">
           Interações:
         </label>
@@ -161,7 +155,7 @@
         </select>
         <!-- TODO: Alarme pausa 
         <span class="justify-div">
-          <label for="change_music_break">Fim de pausa: </label>
+          <label for="changeMusicBreak">Fim de pausa: </label>
           <button type="button"> Teste</button></span>
         <select title="Mudar alarme de pausa" name="change_music_break" id="changeMusicBreak">
           <option value='fire'>Brasas | Fogo</option>
@@ -169,7 +163,7 @@
         -->
         <!-- TODO: Alarme foco
         <span class="justify-div">
-          <label for="change_music_focus">Fim de foco: </label>
+          <label for="changeMusicFocus">Fim de foco: </label>
           <button type="button"> Teste</button></span>
         <select title="Mudar alarme de pausa" name="change_music_focus" id="changeMusicFocus">
           <option value='fire'>Brasas | Fogo</option>
@@ -189,7 +183,7 @@
         <!--
         <span>
           <input title="Auto avanço de inicio de foco" type="checkbox" name="auto_foco" id="autoFoco">
-          <label for="auto_foco">Auto avanço de foco</label>
+          <label for="autoFoco">Auto avanço de foco</label>
           <button
             title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
             type="button">?</button>
@@ -199,7 +193,7 @@
         <!-- 
         <span>
           <input title="Auto avanço de inicio de pausa" type="checkbox" name="auto_break" id="autoBreak">
-          <label for="auto_break">Auto avanço de pausas</label>
+          <label for="autoBreak">Auto avanço de pausas</label>
           <button
             title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
             type="button">?</button>
@@ -239,7 +233,6 @@
           <input title="Quantidade de foco" type="text" name="count_to_break_long" id="countToLongBreak" value="4"
             size="2px">
         </span> -->
-
         <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
         <h4>Notificação do relógio</h4>
         <label for="typeNotification">Tipo de notificação</label>

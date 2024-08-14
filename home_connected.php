@@ -1,4 +1,5 @@
-<?php
+<!-- 
+ <?php
 include "./services/user_data.php";
 // session_start inicia a sessão
 session_start();
@@ -41,7 +42,8 @@ fazer um login, com isso se ele não estiver feito o login não será criado a s
 
 $json = json_encode($data_user);
 echo "<script>var dataUser = $json;</script>";
-?>
+?> 
+-->
 
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
@@ -49,118 +51,97 @@ echo "<script>var dataUser = $json;</script>";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Timer Pomodoro</title>
-  <meta name="description" content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil">
+  <title>Pomodoro Timer</title>
+  <meta name="description"
+    content="Precisando focar do seu jeitinho? Crie um pomodoro personalizado e versátil. Atinja suas metas com mais tranquilidade. Opções de relógio e cronômetro ajustável para sessões de foco e pausas. Use para estudar, trabalhar e realizar as tarefas que desejar!">
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./assets/css/home_connected.css">
 </head>
 
 <body>
-  <header class="header_nav">
-    <input type="checkbox" id="toggleTheme" title="toggleTheme">
-    <button type="button" class="allButtons" id="buttonPerfil">
+  <header>
+    <input type="checkbox" id="toggleTheme" title="Modo claro/escuro">
+    <button type="button" class="circula-buttons" id="buttonPerfil">
       <img src="./assets/images/button-person-circle.svg" alt="perfil" id="perfil">
     </button>
   </header>
 
-  <div id="container_clock">
-    <button type="button" class="topGame" id="buttonGameTop">
+  <div id="containerClock">
+    <button type="button" id="buttonGameTop">
       <img src="./assets/images/dog-and-cup-dark.png" alt="cup and dog">
     </button>
-    <div class="progress_clock_space" theme="pomodoro" id="progressClockSpace">
+    <div class="progress-clock-space" theme="pomodoro" id="progressClockSpace">
       <div class="cub" id="cub2"></div>
       <div class="cub" id="cub1"></div>
       <div class="cub" id="cub4"></div>
-      <div class="containers_cub" id="containerCub5">
+      <div class="containers-cub" id="containerCub5">
         <div class="cub" id="cub5"></div>
       </div>
-      <div class="containers_cub" id="containerCub3">
+      <div class="containers-cub" id="containerCub3">
         <div class="cub" id="cub3"></div>
       </div>
-      <div class="clock_space" id="clock_space">
+      <div class="clock-space" id="clockSpace">
         <h1 id="timerText">25:00</h1>
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove1">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove2">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="microStarAbove3">
-
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_above1">
-
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_above1">
-
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_above2">
-
-        <img src="./assets/images/star.svg" alt="star" class="big_star" id="big_star_above">
-
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_above2">
-
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarAbove2">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarAbove3">
+        <img src="./assets/images/star.svg" alt="star" class="small-star" id="smallStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="middle-star" id="middleStarAbove1">
+        <img src="./assets/images/star.svg" alt="star" class="small-star" id="smallStarAbove2">
+        <img src="./assets/images/star.svg" alt="star" class="big-star" id="bigStarAbove">
+        <img src="./assets/images/star.svg" alt="star" class="middle-star" id="middleStarAbove2">
         <!-- below -->
-        <img src="./assets/images/star.svg" alt="star" class="small_star" id="small_star_below">
-
-        <img src="./assets/images/star.svg" alt="star" class="middle_star" id="middle_star_below">
-
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below1">
-
-        <img src="./assets/images/star.svg" alt="star" class="big_star" id="big_star_below">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below2">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below3">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below4">
-
-        <img src="./assets/images/star.svg" alt="star" class="micro_star" id="micro_star_below5">
-
-
-
+        <img src="./assets/images/star.svg" alt="star" class="small-star" id="smallStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="middle-star" id="middleStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarBelow1">
+        <img src="./assets/images/star.svg" alt="star" class="big-star" id="bigStarBelow">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarBelow2">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarBelow3">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarBelow4">
+        <img src="./assets/images/star.svg" alt="star" class="micro-star" id="microStarBelow5">
       </div>
-
     </div>
-    <div class="count_stars">
-      <p class="break_text">0</p>
-      <img src="./assets/images/star.svg" alt="star" id="star_to_count_star">
+    <div class="count-stars">
+      <p class="break-text">0</p>
+      <img src="./assets/images/star.svg" alt="star" id="starToCountStars">
     </div>
-
   </div>
 
   <div class="container-timer-buttons">
-    <button type="button" class="allButtons" id="buttonMusic">
+    <button type="button" class="circula-buttons" id="buttonMusic">
       <img src="./assets/images/button-music.svg" alt="buttonMusic">
     </button>
-
-    <input type="checkbox" name="" class="allButtons" id="controlPlayTimer" title="controlPlayTimer">
-
-    <button type="button" class="allButtons" id="setClock" title="Temporizador">
+    <input type="checkbox" name="" class="circula-buttons" id="controlPlayTimer" title="Iniciar sessão">
+    <button type="button" class="circula-buttons" id="setClock" title="Temporizador">
     </button>
-
-    <button type="button" class="allButtons" id="buttonGear">
+    <button type="button" class="circula-buttons" id="buttonGear">
       <img src="./assets/images/button-gear.svg" alt="buttonGame">
     </button>
-
-    <button type="button" class="allButtons" id="buttonGameDown">
+    <button type="button" class="circula-buttons" id="buttonGameDown">
       <img src="./assets/images/button-paw.svg" alt="buttonGame">
     </button>
   </div>
 
   <footer>
     <p>
-      @ 2024. <a href="https://github.com/AnnaJulia3/pomodoro-app" target="_blank" rel='noopener noreferrer'>
+      @ 2024.
+      <a href="https://github.com/AnnaJulia3/pomodoro-app" target="_blank" rel='noopener noreferrer'>
         Projeto de estudos pessoais
-      </a>. Em desenvolvimento por <a href="https://github.com/AnnaJulia3" target="_blank" rel='noopener noreferrer'>AJ</a>
+      </a>. Em desenvolvimento por
+      <a href="https://github.com/AnnaJulia3" target="_blank" rel='noopener noreferrer'>
+        AJ
+      </a>
     </p>
   </footer>
 
-
-  <menu class="dropdown-menu" id="perfil_menu">
+  <menu class="dropdown-menu" id="perfilMenu">
     <button type="button" title="Fechar" id="closePerfilMenu" class="button-close">x</button>
 
     <div id="menu_connected">
-      <button type="button" id="perfil_connected" class="allButtons">
+      <button type="button" id="perfil_connected" class="circula-buttons">
         <img src="./assets/images/button-person-circle.svg" alt="perfil">
       </button>
       <br>
@@ -180,35 +161,57 @@ echo "<script>var dataUser = $json;</script>";
     </div>
   </menu>
 
-  <menu class="menu-base" id="group_session_menu" group="no">
+  
+  <menu class="menu-base" id="groupSessionMenu" group="no">
     <div class="menu-inner">
       <button type="button" title="Fechar" id="close" class="button-close">x</button>
-
       <!-- Menu volume -->
       <div class="dropdown-menu" id="musicMenu">
+        <audio loop preload="auto"
+          src="./assets/music/background/0_default_sound-of-a-fantastic-warm-fireplace-141728.mp3" id="fireAudio">
+          Seu navegador não possui suporte ao elemento audio
+        </audio>
+        <!-- // --- inicio -->
+        <audio loop preload="none" src="./assets/music/background/calm_game_music_1-49209.mp3" id="calmAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/clock-tick-76039.mp3" id="clockTickAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/lo-fi-chill-medium-version-159456.mp3"
+          id="loFiChillAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/the-old-water-mill-meditation-8005.mp3"
+          id="runningWaterAudio"></audio>
+        <audio loop preload="none" src="./assets/music/background/titanium-170190.mp3" id="electronicAudio"></audio>
+        <!-- // -- fim playlist -->
+        <audio preload="auto" src="./assets/music/init_pomodoro/default-decide.mp3" id="audioStartPomodoro"></audio>
+        <audio preload="auto" src="./assets/music/lose_pomodoro/game-over-arcade-6435.mp3"
+          id="audioLosePomodoro"></audio>
+        <audio loop preload="auto" src="./assets/music/success_pomodoro/success-1-6297.mp3"
+          id="audioSuccessPomodoro"></audio>
+        <audio loop preload="auto" src="./assets/music/end_break/alert-sound-loop-189741.mp3"
+          id="audioEndBreak"></audio>
         <h4>Volume</h4>
         <label for="audioVolumeGlobal">
           Global:
         </label>
         <input type="range" id="audioVolumeGlobal" name="volumeGlobal" min="0" max="100" step="1">
-
         <label for="audioVolumeAlarm">
-          Alarme (fim de sessão):
+          Alarmes (fim de sessão):
         </label>
         <input type="range" id="audioVolumeAlarm" name="volumeAlarm" min="0" max="100" step="1">
-
         <label for="audioVolumeBackground">
           Música de fundo:
         </label>
         <input type="range" id="audioVolumeBackground" name="volumeBackground" min="0" max="100" step="1">
-
         <label for="audioVolumeInteraction">
           Interações:
         </label>
         <input type="range" id="audioVolumeInteraction" name="volumeInteraction" min="0" max="100" step="1">
         <h4>Sons</h4>
-        <label for="changeMusicBackground"> Música de fundo: </label>
-        <select name="changeMusicBackground" id="changeMusicBackground">
+        <span class="justify-div">
+          <label for="changeMusicBackground"> Música de fundo: </label>
+          <!-- TODO: Tocar música para usuário ouvir
+          <button type="button"> Teste</button>
+           -->
+        </span>
+        <select title="Mudar som de fundo de foco" name="changeMusicBackground" id="changeMusicBackground">
           <option value='fire'>Brasas | Fogo</option>
           <option value='calm'>Suave Acústico</option>
           <option value='clockTick'>Tick de relógio</option>
@@ -216,8 +219,23 @@ echo "<script>var dataUser = $json;</script>";
           <option value='runningWater'>Água escorrendo</option>
           <option value='electronic'>Eletrônica</option>
         </select>
+        <!-- TODO: Alarme pausa 
+        <span class="justify-div">
+          <label for="changeMusicBreak">Fim de pausa: </label>
+          <button type="button"> Teste</button></span>
+        <select title="Mudar alarme de pausa" name="change_music_break" id="changeMusicBreak">
+          <option value='fire'>Brasas | Fogo</option>
+        </select> 
+        -->
+        <!-- TODO: Alarme foco
+        <span class="justify-div">
+          <label for="changeMusicFocus">Fim de foco: </label>
+          <button type="button"> Teste</button></span>
+        <select title="Mudar alarme de pausa" name="change_music_focus" id="changeMusicFocus">
+          <option value='fire'>Brasas | Fogo</option>
+        </select>
+         -->
       </div>
-      <!-- Menu tipo de relógio -->
       <div class="dropdown-menu" id="setClockMenu">
         <h4>Configurações do relógio</h4>
         <label for="typeTimer"> Tipo de timer: </label>
@@ -227,12 +245,78 @@ echo "<script>var dataUser = $json;</script>";
           <option value=2>Cronômetro</option>
           <option value=3>Temporizador</option>
         </select>
+        <!-- TODO: Auto avanço -->
+        <!--
+        <span>
+          <input title="Auto avanço de inicio de foco" type="checkbox" name="auto_foco" id="autoFoco">
+          <label for="autoFoco">Auto avanço de foco</label>
+          <button
+            title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
+            type="button">?</button>
+        </span>
+         -->
+        <!-- TODO: Auto avanço -->
+        <!-- 
+        <span>
+          <input title="Auto avanço de inicio de pausa" type="checkbox" name="auto_break" id="autoBreak">
+          <label for="autoBreak">Auto avanço de pausas</label>
+          <button
+            title="Não espera você acionar o botão para começar a contar a hora, inicia a contagem automaticamente"
+            type="button">?</button>
+        </span>
+         -->
+        <button
+          title="A partir do relógio do seu computador, calcula a sessões para que uma das sessões de foco comesse exatamente na próxima hora"
+          type="button" class="button-menu" id="buttonSynchronizeClock">Sincronização com a próxima hora</button>
+        <h4> Tempo de sessões</h4>
+        <span class="justify-div">
+          <label for="focusSessionTimeRange"> Foco: </label>
+          <input title="Intervalo" type="time" name="focus_session_time_range" id="focusSessionTimeRange" min="00:00:00"
+            max="12:00:00" value="00:25:00" step="1">
+        </span>
+        <span class="justify-div">
+          <label for="breakSessionTimeRange"> Pausa curta: </label>
+          <input title="Intervalo" type="time" name="break_session_time_range" id="breakSessionTimeRange" min="00:00:00"
+            max="12:00:00" value="00:05:00" step="1">
+        </span>
+        <!-- TODO: Criar pausa longa -->
+        <!-- 
+        <span class="justify-div">
+          <label for="longBreakSessionTimeRange"> Pausa longa: </label>
+          <input title="Pausa longa" type="time" name="long_break_session_time_range" id="longBreakSessionTimeRange"
+            min="00:00:00" max="12:00:00" value="00:15:00" step="1">
+        </span>
+         -->
+        <!-- TODO: Criar alternância de foco até pausa curta -->
+        <span class="justify-div">
+          <label for="countToShortBreak">Sessões de foco até uma pausa curta:</label>
+          <input title="Quantidade de foco" type="text" name="count_foco" id="countToShortBreak" value="1">
+        </span>
+        <!-- TODO: Criar alternância de foco até pausa longa -->
+        <!--          
+        <span class="justify-div">
+          <label for="countToLongBreak">Pausas curtas até virar uma pausa longa: </label>
+          <input title="Quantidade de foco" type="text" name="count_to_break_long" id="countToLongBreak" value="4"
+            size="2px">
+        </span> -->
+        <p>Obs.: Máximo de 16 pausas no total, independente de ser longa ou curta</p>
+        <h4>Notificação do relógio</h4>
+        <label for="typeNotification">Tipo de notificação</label>
+        <select title="Tipo de notificação" name="type_notification" id="typeNotification">
+          <option value="0">Sem notificação por fora</option>
+          <!-- TODO: Criar notificações por meio do navegador -->
+          <!-- 
+          <option value="1">Nova Janela | Popup</option>
+          <option value="2">Alerta de notificação</option>
+           -->
+        </select>
       </div>
-
       <div class="dropdown-menu" id="gameMenu">
-        <!-- <h4>Jogo</h4> -->
-        <h4>Em breve mais funções</h4>
-        <!-- <button type="button" title="Em breve mais funções" class="button-menu" disabled>Iniciar</button> -->
+        <h4>Mensagem</h4>
+        <p>Aceito como estou agora, e assim estou em processo de buscar mudar para melhor.</p>
+        <!-- 
+        <button type="button" title="Em breve mais funções" class="button-menu">Iniciar</button> 
+        -->
       </div>
     </div>
   </menu>
@@ -242,7 +326,7 @@ echo "<script>var dataUser = $json;</script>";
   <script src="./assets/js/timer_execution.js"></script>
   <script src="./assets/js/change_theme.js"></script>
   <script src="./assets/js/menu_interaction.js"></script>
-  <!-- <script src="./assets/js/var_to_test.js"></script> -->
+  <script src="./assets/js/input_var_to_timer.js"></script>
   <script src="./assets/js/home_connected.js"></script>
 </body>
 
