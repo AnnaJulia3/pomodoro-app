@@ -1,5 +1,4 @@
-<!-- 
- <?php
+<?php
 include "./services/user_data.php";
 // session_start inicia a sessão
 session_start();
@@ -42,8 +41,7 @@ fazer um login, com isso se ele não estiver feito o login não será criado a s
 
 $json = json_encode($data_user);
 echo "<script>var dataUser = $json;</script>";
-?> 
--->
+?>
 
 <!DOCTYPE html>
 <html lang="pt-BR" data-theme="dark">
@@ -58,6 +56,7 @@ echo "<script>var dataUser = $json;</script>";
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/home_connected.css">
 </head>
 
 <body>
@@ -323,7 +322,7 @@ echo "<script>var dataUser = $json;</script>";
       </div>
     </div>
   </menu>
- 
+
   <script src="./assets/js/animation_progress_bar.js"></script>
   <script src="./assets/js/set_music.js"></script>
   <script src="./assets/js/timer_execution.js"></script>
